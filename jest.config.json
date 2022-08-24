@@ -1,0 +1,13 @@
+{
+  "preset": "ts-jest",
+  "testRegex": ".*\\/__tests__\\/.*\\.test\\.ts$",
+  "testEnvironment": "node",
+  "moduleNameMapper": { "^(\\.{1,2}/.*)\\.js$": "$1" },
+  "resetMocks": true,
+  "passWithNoTests": true,
+  "globals": {
+    "ts-jest": {
+      "isolatedModules": true
+    }
+  }
+}
