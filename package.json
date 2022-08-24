@@ -18,7 +18,10 @@
     "ignorePatterns": [
       "build",
       "node_modules"
-    ]
+    ],
+    "rules": {
+      "no-console": "off"
+    }
   },
   "repository": "git@github.com:kotlinski/dagens-eko-player.git",
   "author": "Simon Kotlinski <simon.kotlinski@gmail.com>",
