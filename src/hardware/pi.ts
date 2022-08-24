@@ -23,22 +23,8 @@ export default class Pi extends Hardware {
         } else {
           this.button_state = 'off';
           handler.handle(Command.STOP);
-          /*          console.log(`child pid: ${child.pid}`);
-          process.kill(-child.pid);*/
         }
       }
     });
   }
-  /*  async start(): Promise<void> {
-
-    return Promise.resolve(undefined);
-  }*/
 }
-/*
-
-let child;
-
-process.on('SIGINT', (_) => {
-  button.unexport();
-});
-*/

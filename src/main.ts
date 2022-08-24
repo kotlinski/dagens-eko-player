@@ -7,9 +7,7 @@ import Player from './player/player';
 type HardwareInput = 'mac' | 'pi';
 
 export async function startRadio(hardware: Hardware) {
-  // eslint-disable-next-line no-console
   console.log(`Started radio on ${hardware.constructor.name}`);
-  // await radio.start(hardware);
 }
 
 export function parseInput(input: HardwareInput): Hardware {
@@ -19,7 +17,6 @@ export function parseInput(input: HardwareInput): Hardware {
   if (input === 'pi') {
     return new Pi(new InputHandler(new Player('cvlc')));
   }
-  // eslint-disable-next-line no-console
   throw new Error(`could not verify hardware, add a hardware as input. For instance 'mac' or 'pi'`);
 }
 

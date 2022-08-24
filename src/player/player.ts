@@ -5,7 +5,7 @@ export default class Player {
   current_process: ChildProcessWithoutNullStreams | undefined = undefined;
 
   private spawnPlayer(): ChildProcessWithoutNullStreams {
-    const child = spawn(this.player, ['https://sverigesradio.se/topsy/ljudfil/srapi/8368057.mp3']);
+    const child = spawn(this.player, ['https://sverigesradio.se/topsy/ljudfil/srapi/8368057.mp3'], { detached: true });
     child.stdout.on('data', (data: string) => {
       console.log(`stdout: ${data}`);
     });
