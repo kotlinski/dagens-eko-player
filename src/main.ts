@@ -1,16 +1,14 @@
 import Pi from './hardware/pi';
-import Hardware from './hardware/hardware';
+import Hardware, { HardwareIdentifier } from './hardware/hardware';
 import Mac from './hardware/mac';
 import InputHandler from './radio/input-handler';
 import Player from './player/player';
-
-type HardwareInput = 'mac' | 'pi';
 
 export async function startRadio(hardware: Hardware) {
   console.log(`Started radio on ${hardware.constructor.name}`);
 }
 
-export function parseInput(input: HardwareInput): Hardware {
+export function parseInput(input: HardwareIdentifier): Hardware {
   if (input === 'mac') {
     return new Mac(new InputHandler(new Player('vlc')));
   }
@@ -23,6 +21,6 @@ export function parseInput(input: HardwareInput): Hardware {
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 (async () => {
   console.log('starting...');
-  const hardware = parseInput(process.argv[2] as HardwareInput);
+  const hardware = parseInput(process.argv[2] as HardwareIdentifier);
   await startRadio(hardware);
 })();
