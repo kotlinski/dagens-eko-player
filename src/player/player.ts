@@ -18,7 +18,7 @@ export default class Player {
     return child;
   }
 
-  play() {
+  play(): void {
     if (this.current_process) {
       this.stop();
     }
