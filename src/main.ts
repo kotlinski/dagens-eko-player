@@ -3,24 +3,21 @@ import Hardware, { HardwareIdentifier } from './hardware/hardware';
 import Mac from './hardware/mac';
 import InputHandler from './radio/input-handler';
 import Player from './player/player';
+import SverigesRadioApiClient from './sveriges-radio/sveriges-radio-api-client';
+import ProcessorProvider from './player/processor-provider';
 
-export async function startRadio(hardware: Hardware) {
-  console.log(`Started radio on ${hardware.constructor.name}`);
-}
-
-export function parseInput(input: HardwareIdentifier): Hardware {
+export function bootHardwareFromInput(input: HardwareIdentifier = 'mac'): Hardware {
+  const sveriges_radio_api_client = new SverigesRadioApiClient();
   if (input === 'mac') {
-    return new Mac(new InputHandler(new Player('vlc')));
+    return new Mac(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'vlc'))));
   }
   if (input === 'pi') {
-    return new Pi(new InputHandler(new Player('cvlc')));
+    return new Pi(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'cvlc'))));
   }
   throw new Error(`could not verify hardware, add a hardware as input. For instance 'mac' or 'pi'`);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 (async () => {
-  console.log('starting...');
-  const hardware = parseInput(process.argv[2] as HardwareIdentifier);
-  await startRadio(hardware);
+  bootHardwareFromInput(process.argv[2] as HardwareIdentifier);
 })();

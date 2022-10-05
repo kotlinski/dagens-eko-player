@@ -19,10 +19,10 @@ export default class Pi extends Hardware {
       if (value === 0) {
         if (this.button_state === 'off') {
           this.button_state = 'playing';
-          handler.handle(Command.PLAY);
+          void handler.handle(Command.PLAY);
         } else {
           this.button_state = 'off';
-          handler.handle(Command.STOP);
+          void handler.handle(Command.PAUSE);
         }
       }
     });
