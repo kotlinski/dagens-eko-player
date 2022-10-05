@@ -30,6 +30,8 @@
   "repository": "git@github.com:kotlinski/dagens-eko-player.git",
   "author": "Simon Kotlinski <simon.kotlinski@gmail.com>",
   "dependencies": {
+    "dayjs": "^1.11.5",
+    "node-fetch": "^2.6.7",
     "onoff": "^6.0.3"
   },
   "devDependencies": {
@@ -37,6 +39,7 @@
     "@springworks/prettier-config": "3005.77.0",
     "@types/jest": "^28.1.7",
     "@types/node": "^16.11.56",
+    "@types/node-fetch": "^2.6.2",
     "eslint": "^8.24.0",
     "jest": "^28.1.3",
     "prettier": "^2.7.1",
