@@ -11,6 +11,11 @@ The pi is expecting to have a button connected to input-output pin 3 and a speak
 
 > yarn run main mac
 
+The current commands are: 
+To play enter number `1` and hit enter in the command line. 
+`2` will pause, `3` to reset and `4` to skip to next episode. 
+
+
 ### on a raspberry pi
 
 First of all you need to figure out what ip the raspberry pi connects to. The easist way is probably to plug it in to a display and connect to your preffered network.
