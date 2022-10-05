@@ -1,4 +1,6 @@
 export enum Command {
+  RESET = 'reset',
   PLAY = 'play',
-  STOP = 'stop',
+  PAUSE = 'pause',
+  NEXT = 'next',
 }
