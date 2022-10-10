@@ -31,7 +31,7 @@
   "author": "Simon Kotlinski <simon.kotlinski@gmail.com>",
   "dependencies": {
     "dayjs": "^1.11.5",
-    "node-fetch": "^2.6.7",
+    "node-fetch": "^3.2.10",
     "onoff": "^6.0.3"
   },
   "devDependencies": {
