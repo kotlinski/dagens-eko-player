@@ -30,7 +30,7 @@
   "repository": "git@github.com:kotlinski/dagens-eko-player.git",
   "author": "Simon Kotlinski <simon.kotlinski@gmail.com>",
   "dependencies": {
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.6",
     "node-fetch": "^2.6.7",
     "onoff": "^6.0.3"
   },
