@@ -8,6 +8,7 @@ The pi is expecting to have a button connected to input-output pin 3 and a speak
 ## The Hardware
 
 The button is programmed to be connected to pin gpio 3. So suggestion is to connect it to pin 5 and 6.
+
 ![Board pins](./img/board-pins.png)
 
 ## How to run
