@@ -1,7 +1,7 @@
 import SverigesRadioApiClient from '../sveriges-radio/sveriges-radio-api-client';
 import { ChildProcess, spawn } from 'child_process';
 
-type SupportedCommandLinePlayers = 'cvlc' | 'vlc';
+type SupportedCommandLinePlayers = 'vlc';
 
 export default class ProcessorProvider {
   constructor(
@@ -28,7 +28,9 @@ export default class ProcessorProvider {
     if (!this.process) {
       this.process = await this.createProcess();
       const urls = await this.sveriges_radio_api_client.fetchLatestEpisodeUrls();
+      console.log('urls');
       urls.forEach((url: string) => {
+        console.log(url);
         this.process!.stdin!.write(`add ${url}\n`);
       });
     }

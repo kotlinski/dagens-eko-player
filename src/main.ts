@@ -12,7 +12,7 @@ export function bootHardwareFromInput(input: HardwareIdentifier = 'mac'): Hardwa
     return new Mac(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'vlc'))));
   }
   if (input === 'pi') {
-    return new Pi(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'cvlc'))));
+    return new Pi(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'vlc'))));
   }
   throw new Error(`could not verify hardware, add a hardware as input. For instance 'mac' or 'pi'`);
 }
