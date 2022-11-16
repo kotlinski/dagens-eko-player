@@ -5,10 +5,6 @@ A daily news radio player. Using a raspberry pi as hardware and the Swedish Radi
 The pi should have vlc installed and be able to run vlc via commandline (the command cvlc).
 The pi is expecting to have a button connected to input-output pin 3 and a speaker via the 3.5 mm input.
 
-## The Hardware
-
-The button is programmed to be connected to pin gpio 3. So suggestion is to connect it to pin 5 and 6.
-
 ![Board pins](./img/board-pins.png)
 
 ## How to run
@@ -30,6 +26,18 @@ First of all you need to figure out what ip the raspberry pi connects to. The ea
 To deploy the code to the raspberry i prefer SFTP and using Filezilla as a client.
 And to start the application you have to ssh into it.
 
-> ssh pi@<the ip>
+> ssh pi@{the ip}
 
 > yarn run main pi
+
+
+## The Hardware
+
+The button is programmed to be connected to pin gpio 3. So suggestion is to connect it to pin 5 and 6.
+
+## Script start up 
+
+On system start up, a cronjob is trigger that starts the script. 
+To add/update a trigger run. A suggestion of what the script looks like can be found in the scripts folder.
+
+> cronjob -e

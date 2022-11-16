@@ -7,12 +7,14 @@ export default class Player {
     const process = await this.process_provider.provideProcess();
     if (process.stdin) {
       process.stdin.write(`play\n`);
+      process.stdin.write(`get_title\n`);
     }
   }
 
   async pause() {
     const process = await this.process_provider.provideProcess();
     if (process.stdin) {
+      process.stdin.write(`get_title\n`);
       process.stdin.write(`pause\n`);
     }
   }
@@ -25,6 +27,7 @@ export default class Player {
     const process = await this.process_provider.provideProcess();
     if (process.stdin) {
       process.stdin.write(`next\n`);
+      process.stdin.write(`get_title\n`);
     }
   }
 }

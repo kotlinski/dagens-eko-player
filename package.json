@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "src/main.js",
   "license": "MIT",
+  "bin": {
+    "run-dagens-eko": "./build/main.js"
+  },
   "engines": {
     "node": ">=18",
     "yarn": "^1.22.18"
   },
   "scripts": {
     "main": "ts-node src/main.ts",
-    "build": "tsc --noEmit",
+    "build": "tsc --build tsconfig.build.json",
     "lint": "eslint --cache .",
     "lint-fix": "eslint --quiet --fix .",
     "format": "prettier --loglevel=silent --write .",
