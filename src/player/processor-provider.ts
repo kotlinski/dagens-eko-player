@@ -1,15 +1,12 @@
 import SverigesRadioApiClient from '../sveriges-radio/sveriges-radio-api-client';
 import { ChildProcess, spawn } from 'child_process';
 
-type SupportedCommandLinePlayers = 'vlc';
-
 export default class ProcessorProvider {
   constructor(private readonly sveriges_radio_api_client: SverigesRadioApiClient) {}
 
   process: ChildProcess | undefined = undefined;
 
   private async createProcess(): Promise<ChildProcess> {
-    const child = spawn(this.player);
     const child = spawn('vlc', ['--no-random', '--no-playlist-autostart']);
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call

@@ -21,17 +21,12 @@ export default class SverigesRadioApiClient {
 
     const program_id = '4540'; // Ekot nyhetssändning
     const url = `https://api.sr.se/api/v2/episodes/index?programid=${program_id}&fromdate=${from_date}&todate=${to_date}&audioquality=hi&format=json`;
-    console.log(`url: ${JSON.stringify(url, null, 2)}`);
+    console.log(`url: ${url}`);
     const response = await fetch(url);
     const latest_episode_info = (await response.json()) as Episodes;
     return latest_episode_info.episodes
       .filter((episode: Episode) => episode.listenpodfile)
       .sort(publishDateSortPredicate)
-      .map((episode: Episode) => {
-        console.log(parseSverigesRadioDate(episode.publishdateutc));
-        console.log(episode.title);
-        console.log(episode.listenpodfile.url);
-        return episode.listenpodfile.url;
-      });
+      .map((episode: Episode) => episode.listenpodfile.url);
   }
 }
