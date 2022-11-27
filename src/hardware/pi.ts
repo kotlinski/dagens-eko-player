@@ -14,19 +14,17 @@ export default class Pi extends Hardware {
   constructor(handler: InputHandler) {
     super(handler);
     this.button = new Gpio(3, 'in', 'both', { debounceTimeout: 25 });
-    console.log('Spinning up button handler');
     this.button.watch((err, value) => {
-      console.log('Button got triggered');
       if (err) {
         console.error(err);
         throw err;
       }
 
       if (value === Button.PRESSED) {
-        void handler.handle(Command.PAUSE);
+        void handler.handleCommand(Command.STOP);
       }
       if (value === Button.RELEASED) {
-        void handler.handle(Command.PLAY);
+        void handler.handleCommand(Command.PLAY);
       }
     });
   }

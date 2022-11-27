@@ -12,7 +12,7 @@ describe('InputHandler', () => {
   });
   describe('handling commands', () => {
     it('should handle the command play', () => {
-      void input_handler.handle(Command.PLAY);
+      void input_handler.handleCommand(Command.PLAY);
       expect(play_spy).toHaveBeenCalled();
     });
   });

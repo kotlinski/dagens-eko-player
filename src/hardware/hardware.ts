@@ -4,9 +4,13 @@
  *
  */
 import InputHandler from '../radio/input-handler';
+import ButtonLogger from '../command-history/button-logger';
 
 export type HardwareIdentifier = 'mac' | 'pi';
 
 export default abstract class Hardware {
-  protected constructor(readonly handler: InputHandler) {}
+  readonly button_state_history: ButtonLogger;
+  protected constructor(readonly handler: InputHandler) {
+    this.button_state_history = new ButtonLogger();
+  }
 }

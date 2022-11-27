@@ -3,11 +3,17 @@ import Hardware from './hardware';
 import InputHandler from '../radio/input-handler';
 import { Command } from '../radio/command';
 import readline, { Interface } from 'readline';
+import ButtonLogger, { LONG_THRESHOLD } from '../command-history/button-logger';
+import ButtonInterpreter from '../command-history/button-interpreter';
 
 export default class Mac extends Hardware {
   private readonly readline: Interface;
+  private readonly logger: ButtonLogger;
+  private readonly interpreter: ButtonInterpreter;
   constructor(readonly handler: InputHandler) {
     super(handler);
+    this.logger = new ButtonLogger();
+    this.interpreter = new ButtonInterpreter(this.logger);
     this.readline = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
@@ -18,16 +24,32 @@ export default class Mac extends Hardware {
   private listener(key_data: string) {
     const input = key_data.toString();
     if (input === '1') {
-      void this.handler.handle(Command.PLAY);
+      void this.handler.handleCommand(Command.PLAY);
     }
     if (input === '2') {
-      void this.handler.handle(Command.PAUSE);
+      void this.handler.handleCommand(Command.STOP);
     }
     if (input === '3') {
-      void this.handler.handle(Command.RESET);
+      void this.handler.handleCommand(Command.RESET);
     }
     if (input === '4') {
-      void this.handler.handle(Command.NEXT);
+      void this.handler.handleCommand(Command.NEXT);
     }
+    if (input === 'w') {
+      this.logger.logButtonInteraction('RELEASED');
+      this.delayedHandler();
+    }
+    if (input === 's') {
+      this.logger.logButtonInteraction('PRESSED');
+      this.delayedHandler();
+    }
+  }
+
+  private delayedHandler() {
+    // before taking any action on the button sequence, we need to wait a bit
+    setTimeout(() => {
+      const commands = this.interpreter.getNextCommands();
+      void this.handler.handleCommands(commands);
+    }, LONG_THRESHOLD);
   }
 }
