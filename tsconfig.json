@@ -2,11 +2,9 @@
   "compilerOptions": {
     "target": "ES2021",
     "module": "CommonJS",
-    "outDir": "build",
     "allowJs": false,
     "resolveJsonModule": true,
     "strict": true,
-    "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -14,7 +12,9 @@
     "noUnusedParameters": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "./build"
   },
+  "include": ["src", "test"],
   "exclude": ["node_modules", "build"]
 }

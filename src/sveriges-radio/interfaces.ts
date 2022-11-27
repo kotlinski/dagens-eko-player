@@ -7,6 +7,7 @@ export interface Episode {
   title: string;
   url: string;
   listenpodfile: ListenPodFile;
+  publishdateutc: string;
 }
 
 /**

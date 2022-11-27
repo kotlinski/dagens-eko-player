@@ -8,11 +8,12 @@ import ProcessorProvider from './player/processor-provider';
 
 export function bootHardwareFromInput(input: HardwareIdentifier = 'mac'): Hardware {
   const sveriges_radio_api_client = new SverigesRadioApiClient();
+  const input_handler = new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client)));
   if (input === 'mac') {
-    return new Mac(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'vlc'))));
+    return new Mac(input_handler);
   }
   if (input === 'pi') {
-    return new Pi(new InputHandler(new Player(new ProcessorProvider(sveriges_radio_api_client, 'vlc'))));
+    return new Pi(input_handler);
   }
   throw new Error(`could not verify hardware, add a hardware as input. For instance 'mac' or 'pi'`);
 }
