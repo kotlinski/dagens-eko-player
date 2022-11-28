@@ -4,6 +4,7 @@ import InputHandler from '../radio/input-handler';
 import readline, { Interface } from 'readline';
 import ButtonLogger, { LONG_THRESHOLD } from '../command-history/button-logger';
 import ButtonInterpreter from '../command-history/button-interpreter';
+import { ButtonState } from '../command-history/button-interfaces';
 
 export default class Mac extends Hardware {
   private readonly readline: Interface;
@@ -35,12 +36,19 @@ export default class Mac extends Hardware {
       void this.handler.handleCommand('NEXT');
     }
     if (input === 'w') {
-      this.logger.logButtonInteraction('RELEASED');
-      this.delayedHandler();
+      this.sequencedButtonInteraction('RELEASED');
     }
     if (input === 's') {
-      this.logger.logButtonInteraction('PRESSED');
+      this.sequencedButtonInteraction('PRESSED');
+    }
+  }
+
+  private sequencedButtonInteraction(state: ButtonState) {
+    try {
+      this.logger.logButtonInteraction(state);
       this.delayedHandler();
+    } catch (e) {
+      console.error((e as Error).message);
     }
   }
 
