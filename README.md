@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml/badge.svg)](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml)
+
 # dagens-eko-player
 
 A daily news radio player. Using a raspberry pi as hardware and the Swedish Radio as news source.
@@ -25,6 +27,7 @@ To add/update a trigger run:
 A suggestion of what the script looks like can be found in the scripts folder.
 
 ## development
+
 
 First of all you need to figure out what `ip` address the raspberry pi connects to. The easist way is probably to plug it in to a display and a keyboard and connect to your preffered network.
 
