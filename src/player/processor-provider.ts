@@ -28,16 +28,14 @@ export default class ProcessorProvider {
   }
 
   public async addEpisodesToPlaylist() {
-    const urls = await this.sveriges_radio_api_client.fetchLatestEpisodeUrls();
-    await this.provideProcess(); // to ensure that a process exists
+    const [urls] = await Promise.all([
+      await this.sveriges_radio_api_client.fetchLatestEpisodeUrls(),
+      await this.provideProcess(), // to ensure that a process exists
+    ]);
 
     for (const url of urls) {
       // Not sure if this is needed, but this is my best way of getting the episodes in the correct order
-      await new Promise((resolve) => {
-        this.process!.stdin!.write(`add ${url}\n`, () => {
-          resolve(undefined);
-        });
-      });
+      this.process!.stdin!.write(`enqueue ${url}\n`);
     }
     // make sure that we start from the top of the playlist
     this.process!.stdin!.write(`goto 0\n`);
