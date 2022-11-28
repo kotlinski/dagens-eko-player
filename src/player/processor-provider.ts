@@ -4,15 +4,6 @@ import { ChildProcess, spawn } from 'child_process';
 export default class ProcessorProvider {
   constructor(private readonly sveriges_radio_api_client: SverigesRadioApiClient) {}
   process: ChildProcess | undefined = undefined;
-  private readonly number_callbacks: ((num: number, p: ChildProcess) => void)[] = [];
-
-  /**
-   * registers a one-time number callback
-   * @param callback
-   */
-  public registerNumberCallback(callback: (time: number, p: ChildProcess) => void) {
-    this.number_callbacks.push(callback);
-  }
 
   private async createProcess(): Promise<ChildProcess> {
     const child = spawn('vlc', ['--no-random', '--no-playlist-autostart']);
@@ -37,15 +28,6 @@ export default class ProcessorProvider {
     if (!this.process) {
       this.process = await this.createProcess();
       await this.addEpisodesToPlaylist();
-
-      this.process.stdout!.on('data', (data: Buffer) => {
-        const number = parseInt(data.toString(), 10);
-        if (!Number.isNaN(number)) {
-          while (this.number_callbacks.length > 0) {
-            this.number_callbacks.pop()!(number, this.process!);
-          }
-        }
-      });
     }
     return this.process;
   }

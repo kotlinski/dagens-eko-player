@@ -1,5 +1,4 @@
 import ProcessProvider from './processor-provider';
-import { ChildProcess } from 'child_process';
 
 /*
 VLC
@@ -105,8 +104,11 @@ export default class Player {
   private async seekInTime(diff_s: number) {
     const process = await this.process_provider.provideProcess();
     if (process.stdin) {
-      this.process_provider.registerNumberCallback((time: number, p: ChildProcess) => {
-        p.stdin!.write(`seek ${time + diff_s}\n`);
+      process.stdout!.on('data', (data: Buffer) => {
+        const number = parseInt(data.toString(), 10);
+        if (!Number.isNaN(number)) {
+          process.stdin!.write(`seek ${number + diff_s}\n`);
+        }
       });
       process.stdin.write(`get_time\n`);
     }
