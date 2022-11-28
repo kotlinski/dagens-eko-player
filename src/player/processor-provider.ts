@@ -4,15 +4,6 @@ import { ChildProcess, spawn } from 'child_process';
 export default class ProcessorProvider {
   constructor(private readonly sveriges_radio_api_client: SverigesRadioApiClient) {}
   process: ChildProcess | undefined = undefined;
-  private readonly number_callbacks: ((num: number, p: ChildProcess) => void)[] = [];
-
-  /**
-   * registers a one-time number callback
-   * @param callback
-   */
-  public registerNumberCallback(callback: (time: number, p: ChildProcess) => void) {
-    this.number_callbacks.push(callback);
-  }
 
   private async createProcess(): Promise<ChildProcess> {
     const child = spawn('vlc', ['--no-random', '--no-playlist-autostart']);
@@ -26,39 +17,25 @@ export default class ProcessorProvider {
   }
 
   public async printProcessorCommands() {
-    const p = await this.createProcess();
-    p.stdin!.write(`help\n`);
-    setTimeout(() => {
-      if (p.pid) process.kill(p.pid);
-    }, 2_000);
+    (await this.provideProcess()).stdin!.write(`help\n`);
   }
 
   public async provideProcess(): Promise<ChildProcess> {
     if (!this.process) {
       this.process = await this.createProcess();
-      await this.addEpisodesToPlaylist();
-
-      this.process.stdout!.on('data', (data: Buffer) => {
-        const number = parseInt(data.toString(), 10);
-        if (!Number.isNaN(number)) {
-          while (this.number_callbacks.length > 0) {
-            this.number_callbacks.pop()!(number, this.process!);
-          }
-        }
-      });
     }
     return this.process;
   }
 
-  private async addEpisodesToPlaylist() {
-    const urls = await this.sveriges_radio_api_client.fetchLatestEpisodeUrls();
+  public async addEpisodesToPlaylist() {
+    const [urls] = await Promise.all([
+      await this.sveriges_radio_api_client.fetchLatestEpisodeUrls(),
+      await this.provideProcess(), // to ensure that a process exists
+    ]);
+
     for (const url of urls) {
       // Not sure if this is needed, but this is my best way of getting the episodes in the correct order
-      await new Promise((resolve) => {
-        this.process!.stdin!.write(`add ${url}\n`, () => {
-          resolve(undefined);
-        });
-      });
+      this.process!.stdin!.write(`enqueue ${url}\n`);
     }
     // make sure that we start from the top of the playlist
     this.process!.stdin!.write(`goto 0\n`);

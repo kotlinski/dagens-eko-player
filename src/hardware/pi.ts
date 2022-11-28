@@ -1,7 +1,6 @@
 import { Gpio } from 'onoff';
 import Hardware from './hardware';
 
-import { Command } from '../radio/command';
 import InputHandler from '../radio/input-handler';
 
 enum Button {
@@ -21,10 +20,10 @@ export default class Pi extends Hardware {
       }
 
       if (value === Button.PRESSED) {
-        void handler.handleCommand(Command.STOP);
+        void handler.handleCommand('STOP');
       }
       if (value === Button.RELEASED) {
-        void handler.handleCommand(Command.PLAY);
+        void handler.handleCommand('START');
       }
     });
   }

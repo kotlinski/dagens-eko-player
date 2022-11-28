@@ -16,8 +16,7 @@ export default class ButtonLogger {
 
     if (previous?.state === state) {
       // Something is wrong, can't register same action twice
-      console.error(`Registered ${state} twice. ${new Date().toString()} and ${previous.date.toISOString()}`);
-      return;
+      throw Error(`Registered ${state} twice. ${new Date().toString()} and ${previous.date.toISOString()}`);
     }
     this.button_log.unshift(current);
 

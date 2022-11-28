@@ -1,10 +1,10 @@
 import Hardware from './hardware';
 
 import InputHandler from '../radio/input-handler';
-import { Command } from '../radio/command';
 import readline, { Interface } from 'readline';
 import ButtonLogger, { LONG_THRESHOLD } from '../command-history/button-logger';
 import ButtonInterpreter from '../command-history/button-interpreter';
+import { ButtonState } from '../command-history/button-interfaces';
 
 export default class Mac extends Hardware {
   private readonly readline: Interface;
@@ -24,24 +24,31 @@ export default class Mac extends Hardware {
   private listener(key_data: string) {
     const input = key_data.toString();
     if (input === '1') {
-      void this.handler.handleCommand(Command.PLAY);
+      void this.handler.handleCommand('START');
     }
     if (input === '2') {
-      void this.handler.handleCommand(Command.STOP);
+      void this.handler.handleCommand('STOP');
     }
     if (input === '3') {
-      void this.handler.handleCommand(Command.RESET);
+      void this.handler.handleCommand('TOGGLE_PAUSE');
     }
     if (input === '4') {
-      void this.handler.handleCommand(Command.NEXT);
+      void this.handler.handleCommand('NEXT');
     }
     if (input === 'w') {
-      this.logger.logButtonInteraction('RELEASED');
-      this.delayedHandler();
+      this.sequencedButtonInteraction('RELEASED');
     }
     if (input === 's') {
-      this.logger.logButtonInteraction('PRESSED');
+      this.sequencedButtonInteraction('PRESSED');
+    }
+  }
+
+  private sequencedButtonInteraction(state: ButtonState) {
+    try {
+      this.logger.logButtonInteraction(state);
       this.delayedHandler();
+    } catch (e) {
+      console.error((e as Error).message);
     }
   }
 

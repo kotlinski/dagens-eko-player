@@ -2,12 +2,19 @@ interface ListenPodFile {
   url: string;
 }
 
+interface Program {
+  id: number;
+  name: string;
+}
+
 export interface Episode {
   id: number;
   title: string;
+  description: string;
   url: string;
   listenpodfile: ListenPodFile;
   publishdateutc: string;
+  program: Program;
 }
 
 /**

@@ -1,6 +1,5 @@
 import ButtonInterpreter from '../button-interpreter';
 import ButtonLogger from '../button-logger';
-import { Command } from '../../radio/command';
 
 describe('button-interpreter', () => {
   let interpreter: ButtonInterpreter;
@@ -21,7 +20,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(1_000);
       });
       it('should reset and play', () => {
-        expect(interpreter.getNextCommands()).toEqual([Command.RESET, Command.PLAY]);
+        expect(interpreter.getNextCommands()).toEqual(['START']);
       });
     });
     describe('a scenario where the radio has booted in an open state and got closed', () => {
@@ -30,7 +29,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(1_000);
       });
       it('should pause', () => {
-        expect(interpreter.getNextCommands()).toEqual([Command.STOP]);
+        expect(interpreter.getNextCommands()).toEqual(['STOP']);
       });
     });
     describe('when radio is opened and got a tap', () => {
@@ -43,7 +42,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(1_000);
       });
       it('should toggle play', () => {
-        expect(interpreter.getNextCommands()).toEqual([Command.TOGGLE_PAUSE]);
+        expect(interpreter.getNextCommands()).toEqual(['TOGGLE_PAUSE']);
       });
     });
     describe('with two short and one long press', function () {
@@ -67,7 +66,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(5_000);
       });
       it('should pause and ignore the prior short taps', () => {
-        expect(interpreter.getNextCommands()).toEqual([Command.RESET, Command.PLAY]);
+        expect(interpreter.getNextCommands()).toEqual(['START']);
       });
     });
   });
