@@ -1,5 +1,4 @@
 import Player from '../../player/player';
-import { Command } from '../command';
 import InputHandler from '../input-handler';
 
 describe('InputHandler', () => {
@@ -12,7 +11,7 @@ describe('InputHandler', () => {
   });
   describe('handling commands', () => {
     it('should handle the command play', () => {
-      void input_handler.handleCommand(Command.PLAY);
+      void input_handler.handleCommand('START');
       expect(play_spy).toHaveBeenCalled();
     });
   });

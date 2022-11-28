@@ -1,5 +1,4 @@
 import { ButtonLog, ButtonState } from './button-interfaces';
-import { Command } from '../radio/command';
 import ButtonLogger, { LONG_THRESHOLD } from './button-logger';
 
 type Event = 'TAP' | 'CLOSED' | 'SHORT_OPEN' | 'OPEN';
@@ -12,6 +11,8 @@ type Pattern =
   | 'DOUBLE_TAP'
   | 'TRIPLE_TAP'
   | 'QUADRUPLE_TAP';
+
+type Command = 'TOGGLE_PAUSE' | 'START' | 'STOP' | 'NEXT' | 'SKIP_15_S' | 'REWIND_15_S';
 
 export default class ButtonInterpreter {
   // Caution: the order of entries matters
@@ -81,19 +82,19 @@ export default class ButtonInterpreter {
 
     switch (matched_pattern) {
       case 'TRIPLE_TAP':
-        return [Command.SKIP_15_S];
+        return ['SKIP_15_S'];
       case 'QUADRUPLE_TAP':
-        return [Command.REWIND_15_S];
+        return ['REWIND_15_S'];
       case 'DOUBLE_TAP':
-        return [Command.NEXT];
+        return ['NEXT'];
       case 'SINGLE_TAP':
-        return [Command.TOGGLE_PAUSE];
+        return ['TOGGLE_PAUSE'];
       case 'STARTED_AND_OPENED':
       case 'OPENED':
-        return [Command.START];
+        return ['START'];
       case 'STARTED_AND_CLOSED':
       case 'CLOSED':
-        return [Command.STOP];
+        return ['STOP'];
       default:
         console.error('Unknown radio-box-event');
         return [];

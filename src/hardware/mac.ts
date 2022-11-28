@@ -1,7 +1,6 @@
 import Hardware from './hardware';
 
 import InputHandler from '../radio/input-handler';
-import { Command } from '../radio/command';
 import readline, { Interface } from 'readline';
 import ButtonLogger, { LONG_THRESHOLD } from '../command-history/button-logger';
 import ButtonInterpreter from '../command-history/button-interpreter';
@@ -24,16 +23,16 @@ export default class Mac extends Hardware {
   private listener(key_data: string) {
     const input = key_data.toString();
     if (input === '1') {
-      void this.handler.handleCommand(Command.START);
+      void this.handler.handleCommand('START');
     }
     if (input === '2') {
-      void this.handler.handleCommand(Command.STOP);
+      void this.handler.handleCommand('STOP');
     }
     if (input === '3') {
-      void this.handler.handleCommand(Command.TOGGLE_PAUSE);
+      void this.handler.handleCommand('TOGGLE_PAUSE');
     }
     if (input === '4') {
-      void this.handler.handleCommand(Command.NEXT);
+      void this.handler.handleCommand('NEXT');
     }
     if (input === 'w') {
       this.logger.logButtonInteraction('RELEASED');
