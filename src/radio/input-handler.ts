@@ -1,5 +1,5 @@
-import { Command } from './command';
 import Player from '../player/player';
+import { Command } from './command';
 
 export default class InputHandler {
   constructor(readonly player: Player) {}

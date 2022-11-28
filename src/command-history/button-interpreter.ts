@@ -1,5 +1,6 @@
 import { ButtonLog, ButtonState } from './button-interfaces';
 import ButtonLogger, { LONG_THRESHOLD } from './button-logger';
+import { Command } from '../radio/command';
 
 type Event = 'TAP' | 'CLOSED' | 'SHORT_OPEN' | 'OPEN';
 type Pattern =
@@ -11,8 +12,6 @@ type Pattern =
   | 'DOUBLE_TAP'
   | 'TRIPLE_TAP'
   | 'QUADRUPLE_TAP';
-
-type Command = 'TOGGLE_PAUSE' | 'START' | 'STOP' | 'NEXT' | 'SKIP_15_S' | 'REWIND_15_S';
 
 export default class ButtonInterpreter {
   // Caution: the order of entries matters
