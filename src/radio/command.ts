@@ -1,7 +1,7 @@
 export enum Command {
   RESET = 'RESET',
   TOGGLE_PAUSE = 'TOGGLE_PAUSE',
-  PLAY = 'PLAY',
+  START = 'START',
   STOP = 'STOP',
   NEXT = 'NEXT',
   SKIP_15_S = 'SKIP_15_S',

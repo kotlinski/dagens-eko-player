@@ -90,7 +90,7 @@ export default class ButtonInterpreter {
         return [Command.TOGGLE_PAUSE];
       case 'STARTED_AND_OPENED':
       case 'OPENED':
-        return [Command.RESET, Command.PLAY];
+        return [Command.START];
       case 'STARTED_AND_CLOSED':
       case 'CLOSED':
         return [Command.STOP];

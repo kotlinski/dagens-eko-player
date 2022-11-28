@@ -24,7 +24,7 @@ export default class Pi extends Hardware {
         void handler.handleCommand(Command.STOP);
       }
       if (value === Button.RELEASED) {
-        void handler.handleCommand(Command.PLAY);
+        void handler.handleCommand(Command.START);
       }
     });
   }

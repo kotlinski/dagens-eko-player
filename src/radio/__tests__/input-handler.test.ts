@@ -4,10 +4,10 @@ import InputHandler from '../input-handler';
 
 describe('InputHandler', () => {
   let input_handler: InputHandler;
-  let play_spy: jest.SpiedFunction<Player['play']>;
+  let play_spy: jest.SpiedFunction<Player['start']>;
 
   beforeEach(() => {
-    play_spy = jest.spyOn(Player.prototype, 'play').mockResolvedValue();
+    play_spy = jest.spyOn(Player.prototype, 'start').mockResolvedValue();
     input_handler = new InputHandler(Player.prototype);
   });
   describe('handling commands', () => {

@@ -12,16 +12,13 @@ export default class InputHandler {
     console.log(command);
     switch (command) {
       case Command.PLAY:
-        await this.player.play();
+        await this.player.start();
         break;
       case Command.STOP:
         await this.player.stop();
         break;
       case Command.TOGGLE_PAUSE:
         await this.player.togglePause();
-        break;
-      case Command.RESET:
-        this.player.reset();
         break;
       case Command.NEXT:
         await this.player.next();

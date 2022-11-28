@@ -24,13 +24,13 @@ export default class Mac extends Hardware {
   private listener(key_data: string) {
     const input = key_data.toString();
     if (input === '1') {
-      void this.handler.handleCommand(Command.PLAY);
+      void this.handler.handleCommand(Command.START);
     }
     if (input === '2') {
       void this.handler.handleCommand(Command.STOP);
     }
     if (input === '3') {
-      void this.handler.handleCommand(Command.RESET);
+      void this.handler.handleCommand(Command.TOGGLE_PAUSE);
     }
     if (input === '4') {
       void this.handler.handleCommand(Command.NEXT);

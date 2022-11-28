@@ -17,23 +17,20 @@ export default class ProcessorProvider {
   }
 
   public async printProcessorCommands() {
-    const p = await this.createProcess();
-    p.stdin!.write(`help\n`);
-    setTimeout(() => {
-      if (p.pid) process.kill(p.pid);
-    }, 2_000);
+    (await this.provideProcess()).stdin!.write(`help\n`);
   }
 
   public async provideProcess(): Promise<ChildProcess> {
     if (!this.process) {
       this.process = await this.createProcess();
-      await this.addEpisodesToPlaylist();
     }
     return this.process;
   }
 
-  private async addEpisodesToPlaylist() {
+  public async addEpisodesToPlaylist() {
     const urls = await this.sveriges_radio_api_client.fetchLatestEpisodeUrls();
+    await this.provideProcess(); // to ensure that a process exists
+
     for (const url of urls) {
       // Not sure if this is needed, but this is my best way of getting the episodes in the correct order
       await new Promise((resolve) => {

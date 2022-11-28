@@ -74,7 +74,8 @@ VLC
 export default class Player {
   constructor(private readonly process_provider: ProcessProvider) {}
 
-  async play(): Promise<void> {
+  async start(): Promise<void> {
+    await this.process_provider.addEpisodesToPlaylist();
     await this.performCommand('play');
   }
 
@@ -83,10 +84,6 @@ export default class Player {
   }
 
   async stop() {
-    await this.performCommand('stop');
-  }
-
-  reset() {
     this.process_provider.resetProcessor();
   }
 

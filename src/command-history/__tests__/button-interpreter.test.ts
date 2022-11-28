@@ -21,7 +21,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(1_000);
       });
       it('should reset and play', () => {
-        expect(interpreter.getNextCommands()).toEqual([Command.RESET, Command.PLAY]);
+        expect(interpreter.getNextCommands()).toEqual([Command.START]);
       });
     });
     describe('a scenario where the radio has booted in an open state and got closed', () => {
@@ -67,7 +67,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(5_000);
       });
       it('should pause and ignore the prior short taps', () => {
-        expect(interpreter.getNextCommands()).toEqual([Command.RESET, Command.PLAY]);
+        expect(interpreter.getNextCommands()).toEqual([Command.START]);
       });
     });
   });
