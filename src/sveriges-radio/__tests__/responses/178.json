@@ -1,0 +1,120 @@
+[
+  {
+    "id": 2072917,
+    "title": "Riskerna ökar enligt Finansinspektionen",
+    "description": "Fastighetsbranschen och bolånetagare kan få det extra tufft framöver. De utgör också en risk för stabiliteten i det finansiella systemet enligt Finansinspektionen.",
+    "url": "https://sverigesradio.se/avsnitt/2072917",
+    "program": {
+      "id": 178,
+      "name": "Ekonomiekot"
+    },
+    "audiopreference": "default",
+    "audiopriority": "aac",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669735560000)/",
+    "imageurl": "https://static-cdn.sr.se/images/178/b0123a26-03bb-4556-9b10-daacad8ddb55.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/178/b0123a26-03bb-4556-9b10-daacad8ddb55.jpg",
+    "photographer": "Mattias Ahlm, Sveriges Radio",
+    "listenpodfile": {
+      "title": "Riskerna ökar enligt Finansinspektionen",
+      "description": "",
+      "filesizeinbytes": 8543604,
+      "program": {
+        "id": 178,
+        "name": "Ekonomiekot"
+      },
+      "availablefromutc": "/Date(1669735560000)/",
+      "duration": 533,
+      "publishdateutc": "/Date(1669735560000)/",
+      "id": 8597854,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597854.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekonomiekot[p(178)]/[e(2072917)]"
+    },
+    "downloadpodfile": {
+      "title": "Riskerna ökar enligt Finansinspektionen",
+      "description": "",
+      "filesizeinbytes": 8543604,
+      "program": {
+        "id": 178,
+        "name": "Ekonomiekot"
+      },
+      "availablefromutc": "/Date(1669735560000)/",
+      "duration": 533,
+      "publishdateutc": "/Date(1669735560000)/",
+      "id": 8597854,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597854.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekonomiekot[p(178)]/[e(2072917)]"
+    }
+  },
+  {
+    "id": 2053478,
+    "title": "Ekonomiekot",
+    "description": "Ekonomiekot är Ekots nyhetsprogram om senaste nytt i ekonomins värld.",
+    "url": "https://sverigesradio.se/avsnitt/2053478",
+    "program": {
+      "id": 178,
+      "name": "Ekonomiekot"
+    },
+    "audiopreference": "default",
+    "audiopriority": "aac",
+    "audiopresentation": "format",
+    "availableuntilutc": "2022-12-29T07:36:00Z",
+    "publishdateutc": "/Date(1669707120000)/",
+    "imageurl": "https://static-cdn.sr.se/images/178/28ce89c0-6cb1-490e-aa2a-fe5192b65269.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/178/28ce89c0-6cb1-490e-aa2a-fe5192b65269.jpg",
+    "broadcast": {
+      "availablestoputc": "/Date(1672299360000)/",
+      "playlist": {
+        "duration": 240,
+        "publishdateutc": "/Date(1669707120000)/",
+        "id": 8597019,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8597019&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekonomiekot[p(178)]/[e(2053478)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 240,
+          "publishdateutc": "/Date(1669707120000)/",
+          "id": 8597019,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597019-hi.m4a",
+          "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekonomiekot[p(178)]/[e(2053478)]"
+        }
+      ]
+    },
+    "broadcasttime": {
+      "starttimeutc": "/Date(1669707120000)/",
+      "endtimeutc": "/Date(1669707360000)/"
+    },
+    "listenpodfile": {
+      "title": "Ekonomiekot 20221129 08:32",
+      "description": "",
+      "filesizeinbytes": 3841333,
+      "program": {
+        "id": 178,
+        "name": "Ekonomiekot"
+      },
+      "availablefromutc": "/Date(1669707120000)/",
+      "duration": 240,
+      "publishdateutc": "/Date(1669707120000)/",
+      "id": 8597021,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597021.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekonomiekot[p(178)]/[e(2053478)]"
+    },
+    "downloadpodfile": {
+      "title": "Ekonomiekot 20221129 08:32",
+      "description": "",
+      "filesizeinbytes": 3841333,
+      "program": {
+        "id": 178,
+        "name": "Ekonomiekot"
+      },
+      "availablefromutc": "/Date(1669707120000)/",
+      "duration": 240,
+      "publishdateutc": "/Date(1669707120000)/",
+      "id": 8597021,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597021.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekonomiekot[p(178)]/[e(2053478)]"
+    },
+    "channelid": 132
+  }
+]

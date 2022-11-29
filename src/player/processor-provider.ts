@@ -1,8 +1,8 @@
-import SverigesRadioApiClient from '../sveriges-radio/sveriges-radio-api-client';
 import { ChildProcess, spawn } from 'child_process';
+import SverigesRadioProgramProvider from '../sveriges-radio/sveriges-radio-program-provider';
 
 export default class ProcessorProvider {
-  constructor(private readonly sveriges_radio_api_client: SverigesRadioApiClient) {}
+  constructor(private readonly program_provider: SverigesRadioProgramProvider) {}
   process: ChildProcess | undefined = undefined;
 
   private async createProcess(): Promise<ChildProcess> {
@@ -29,7 +29,7 @@ export default class ProcessorProvider {
 
   public async addEpisodesToPlaylist() {
     const [urls] = await Promise.all([
-      await this.sveriges_radio_api_client.fetchLatestEpisodeUrls(),
+      await this.program_provider.fetchLatestEpisodeUrls(),
       await this.provideProcess(), // to ensure that a process exists
     ]);
 

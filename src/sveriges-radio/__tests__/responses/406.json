@@ -1,0 +1,118 @@
+[
+  {
+    "id": 2053472,
+    "title": "Nyheter från Vetenskapsradion",
+    "description": "Vetenskapsnyheter från alla tänkbara forskningsområden. Här får du som lyssnare ofta höra nyheten innan den blir uppmärksammad av övriga media. Sänds i P1.",
+    "url": "https://sverigesradio.se/avsnitt/2053472",
+    "program": { "id": 406, "name": "Vetenskapsradion Nyheter" },
+    "audiopreference": "pod",
+    "audiopriority": "mp3",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669700040000)/",
+    "imageurl": "https://static-cdn.sr.se/images/406/94b36308-3470-444c-8a50-45f207a15acf.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/406/94b36308-3470-444c-8a50-45f207a15acf.jpg",
+    "broadcast": {
+      "availablestoputc": "/Date(1672292340000)/",
+      "playlist": {
+        "duration": 300,
+        "publishdateutc": "/Date(1669700040000)/",
+        "id": 8596805,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8596805&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053472)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 300,
+          "publishdateutc": "/Date(1669700040000)/",
+          "id": 8596805,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8596805-hi.m4a",
+          "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053472)]"
+        }
+      ]
+    },
+    "broadcasttime": { "starttimeutc": "/Date(1669700040000)/", "endtimeutc": "/Date(1669700340000)/" },
+    "listenpodfile": {
+      "title": "Nyheter från Vetenskapsradion ",
+      "description": "",
+      "filesizeinbytes": 4841246,
+      "program": { "id": 406, "name": "Vetenskapsradion Nyheter" },
+      "availablefromutc": "/Date(1669700040000)/",
+      "duration": 303,
+      "publishdateutc": "/Date(1669700040000)/",
+      "id": 8596821,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8596821.mp3",
+      "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053472)]"
+    },
+    "downloadpodfile": {
+      "title": "Nyheter från Vetenskapsradion ",
+      "description": "",
+      "filesizeinbytes": 4841246,
+      "program": { "id": 406, "name": "Vetenskapsradion Nyheter" },
+      "availablefromutc": "/Date(1669700040000)/",
+      "duration": 303,
+      "publishdateutc": "/Date(1669700040000)/",
+      "id": 8596821,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8596821.mp3",
+      "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053472)]"
+    },
+    "channelid": 132
+  },
+  {
+    "id": 2053440,
+    "title": "Nyheter från Vetenskapsradion",
+    "description": "Vetenskapsnyheter från alla tänkbara forskningsområden. Här får du som lyssnare ofta höra nyheten innan den blir uppmärksammad av övriga media. Sänds i P1.",
+    "url": "https://sverigesradio.se/avsnitt/2053440",
+    "program": { "id": 406, "name": "Vetenskapsradion Nyheter" },
+    "audiopreference": "pod",
+    "audiopriority": "mp3",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669613640000)/",
+    "imageurl": "https://static-cdn.sr.se/images/406/94b36308-3470-444c-8a50-45f207a15acf.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/406/94b36308-3470-444c-8a50-45f207a15acf.jpg",
+    "broadcast": {
+      "availablestoputc": "/Date(1672205940000)/",
+      "playlist": {
+        "duration": 300,
+        "publishdateutc": "/Date(1669613640000)/",
+        "id": 8595272,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8595272&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053440)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 300,
+          "publishdateutc": "/Date(1669613640000)/",
+          "id": 8595272,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8595272-hi.m4a",
+          "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053440)]"
+        }
+      ]
+    },
+    "broadcasttime": { "starttimeutc": "/Date(1669613640000)/", "endtimeutc": "/Date(1669613940000)/" },
+    "listenpodfile": {
+      "title": "Nyheter från Vetenskapsradion ",
+      "description": "",
+      "filesizeinbytes": 4784798,
+      "program": { "id": 406, "name": "Vetenskapsradion Nyheter" },
+      "availablefromutc": "/Date(1669613640000)/",
+      "duration": 299,
+      "publishdateutc": "/Date(1669613640000)/",
+      "id": 8595357,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8595357.mp3",
+      "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053440)]"
+    },
+    "downloadpodfile": {
+      "title": "Nyheter från Vetenskapsradion ",
+      "description": "",
+      "filesizeinbytes": 4784798,
+      "program": { "id": 406, "name": "Vetenskapsradion Nyheter" },
+      "availablefromutc": "/Date(1669613640000)/",
+      "duration": 299,
+      "publishdateutc": "/Date(1669613640000)/",
+      "id": 8595357,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8595357.mp3",
+      "statkey": "/app/avsnitt/vetenskapsradion nyheter[k(406)]/vetenskapsradion nyheter[p(406)]/[e(2053440)]"
+    },
+    "channelid": 132
+  }
+]

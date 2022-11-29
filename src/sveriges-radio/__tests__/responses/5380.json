@@ -1,0 +1,146 @@
+[
+  {
+    "id": 2052620,
+    "title": "Nyheter från Ekot",
+    "description": "Senaste nytt varje timme från Ekoredaktionen.",
+    "url": "https://sverigesradio.se/avsnitt/2052620",
+    "program": {
+      "id": 5380,
+      "name": "Ekot senaste nytt"
+    },
+    "audiopreference": "default",
+    "audiopriority": "aac",
+    "audiopresentation": "format",
+    "availableuntilutc": "2022-12-29T17:01:00Z",
+    "publishdateutc": "/Date(1669741200000)/",
+    "imageurl": "https://static-cdn.sr.se/images/5380/a7898d6c-786f-4fcb-b68e-c5f56f4b3bef.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/5380/a7898d6c-786f-4fcb-b68e-c5f56f4b3bef.jpg",
+    "photographer": "",
+    "broadcast": {
+      "availablestoputc": "/Date(1672333260000)/",
+      "playlist": {
+        "duration": 60,
+        "publishdateutc": "/Date(1669741200000)/",
+        "id": 8598067,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8598067&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2052620)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 60,
+          "publishdateutc": "/Date(1669741200000)/",
+          "id": 8598067,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598067-hi.m4a",
+          "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2052620)]"
+        }
+      ]
+    },
+    "broadcasttime": {
+      "starttimeutc": "/Date(1669741200000)/",
+      "endtimeutc": "/Date(1669741260000)/"
+    },
+    "listenpodfile": {
+      "title": "Nyheter från Ekot 20221129 18:00",
+      "description": "",
+      "filesizeinbytes": 995138,
+      "program": {
+        "id": 5380,
+        "name": "Ekot senaste nytt"
+      },
+      "availablefromutc": "/Date(1669741200000)/",
+      "duration": 60,
+      "publishdateutc": "/Date(1669741200000)/",
+      "id": 8598068,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598068.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2052620)]"
+    },
+    "downloadpodfile": {
+      "title": "Nyheter från Ekot 20221129 18:00",
+      "description": "",
+      "filesizeinbytes": 995138,
+      "program": {
+        "id": 5380,
+        "name": "Ekot senaste nytt"
+      },
+      "availablefromutc": "/Date(1669741200000)/",
+      "duration": 60,
+      "publishdateutc": "/Date(1669741200000)/",
+      "id": 8598068,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598068.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2052620)]"
+    },
+    "channelid": 701
+  },
+  {
+    "id": 2053487,
+    "title": "Nyheter från Ekot",
+    "description": "Senaste nytt varje timme från Ekoredaktionen.",
+    "url": "https://sverigesradio.se/avsnitt/2053487",
+    "program": {
+      "id": 5380,
+      "name": "Ekot senaste nytt"
+    },
+    "audiopreference": "default",
+    "audiopriority": "aac",
+    "audiopresentation": "format",
+    "availableuntilutc": "2022-12-29T15:02:00Z",
+    "publishdateutc": "/Date(1669734000000)/",
+    "imageurl": "https://static-cdn.sr.se/images/5380/a7898d6c-786f-4fcb-b68e-c5f56f4b3bef.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/5380/a7898d6c-786f-4fcb-b68e-c5f56f4b3bef.jpg",
+    "photographer": "",
+    "broadcast": {
+      "availablestoputc": "/Date(1672326120000)/",
+      "playlist": {
+        "duration": 120,
+        "publishdateutc": "/Date(1669734000000)/",
+        "id": 8597827,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8597827&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2053487)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 120,
+          "publishdateutc": "/Date(1669734000000)/",
+          "id": 8597827,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597827-hi.m4a",
+          "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2053487)]"
+        }
+      ]
+    },
+    "broadcasttime": {
+      "starttimeutc": "/Date(1669734000000)/",
+      "endtimeutc": "/Date(1669734120000)/"
+    },
+    "listenpodfile": {
+      "title": "Nyheter från Ekot 20221129 16:00",
+      "description": "",
+      "filesizeinbytes": 1921241,
+      "program": {
+        "id": 5380,
+        "name": "Ekot senaste nytt"
+      },
+      "availablefromutc": "/Date(1669734000000)/",
+      "duration": 120,
+      "publishdateutc": "/Date(1669734000000)/",
+      "id": 8597829,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597829.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2053487)]"
+    },
+    "downloadpodfile": {
+      "title": "Nyheter från Ekot 20221129 16:00",
+      "description": "",
+      "filesizeinbytes": 1921241,
+      "program": {
+        "id": 5380,
+        "name": "Ekot senaste nytt"
+      },
+      "availablefromutc": "/Date(1669734000000)/",
+      "duration": 120,
+      "publishdateutc": "/Date(1669734000000)/",
+      "id": 8597829,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597829.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot senaste nytt[p(5380)]/[e(2053487)]"
+    },
+    "channelid": 132
+  }
+]

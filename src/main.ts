@@ -4,6 +4,7 @@ import ProcessorProvider from './player/processor-provider';
 import Keyboard from './io/keyboard';
 import SingleButtonSequenceInterpreter from './io/single-button-io/button-interpreter';
 import PiButton from './io/pi-button';
+import SverigesRadioProgramProvider from './sveriges-radio/sveriges-radio-program-provider';
 
 function setUpIO(): (Keyboard | PiButton)[] {
   const single_button_sequence_interpreter = new SingleButtonSequenceInterpreter();
@@ -26,11 +27,11 @@ function setUpIO(): (Keyboard | PiButton)[] {
 }
 
 export function bootHardwareFromInput() {
-  const sveriges_radio_api_client = new SverigesRadioApiClient();
+  const program_provider = new SverigesRadioProgramProvider(new SverigesRadioApiClient());
 
   // todo: separate vlc_process and processor_provider
   // rename processor-provider to VLC-process provider
-  const processor_provider = new ProcessorProvider(sveriges_radio_api_client);
+  const processor_provider = new ProcessorProvider(program_provider);
 
   new Player(processor_provider, setUpIO());
 }
