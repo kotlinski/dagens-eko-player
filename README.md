@@ -28,7 +28,6 @@ A suggestion of what the script looks like can be found in the scripts folder.
 
 ## development
 
-
 First of all you need to figure out what `ip` address the raspberry pi connects to. The easist way is probably to plug it in to a display and a keyboard and connect to your preffered network.
 
 After that you can run `ifconfig` to figur out it's current ip. This ip may change over time, so make sure to configure your
@@ -43,16 +42,32 @@ And to start the application you have to ssh into it.
 
 ## how to run
 
-### locally
+> yarn run main
 
-> yarn run main mac
+Commands from a single button connected to the pi's GPIO or a regular keyboard are supported.
 
-The current commands are:
-To play enter number `1` and hit enter in the command line.
-`2` will pause, `3` to reset and `4` to skip to next episode.
+### with keyboard as input
 
-### on a raspberry pi
+_Supported keyboard buttons are:_
 
-> yarn run main pi
+- `1` Start radio
+- `2` Toggle pause
+- `3` Next program
+- `4` Fast forward 15 seconds
+- `5` Rewind 15 seconds
+- `6` Stop
+- `s` Equals pressed in single button mode (see description for pi below)
+- `w` Equals releases in single button mode (see description for pi below)
 
-The pi is designed to be in a box. When the box is opened (the button is released) the pi should start playing.
+### on a raspberry pi with a GPIO button as input
+
+The pi is designed to be in a box. When the box lid is opened (the button is released) the pi should start playing.
+
+The one button solution can recognice and handle the following patterns:
+
+- `released` will start playing
+- `pressed` stop playing
+- `single tap` toggle pause
+- `double tap` next program
+- `triple tap` fast forward 15 seconds
+- `quadruple tap` rewind 15 seconds

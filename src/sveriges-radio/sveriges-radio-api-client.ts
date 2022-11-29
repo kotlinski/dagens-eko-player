@@ -36,6 +36,7 @@ export default class SverigesRadioApiClient {
   ];
 
   // will pick the latest episode of each program id
+  // Todo: remove logic from sveriges-radio-api-client
   async fetchLatestEpisodeUrls(): Promise<string[]> {
     return (
       await Promise.all(

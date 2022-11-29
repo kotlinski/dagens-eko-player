@@ -1,7 +1,7 @@
-import { ButtonLog, ButtonState } from './button-interfaces';
+import { ButtonLog, SingleButtonState } from './button-interfaces';
 
 export const LONG_THRESHOLD = 750; // milliseconds until a "tap" becomes a "long press"
-export default class ButtonLogger {
+export default class SingleButtonRecorder {
   button_log: ButtonLog[] = [];
 
   /**
@@ -10,7 +10,7 @@ export default class ButtonLogger {
    *
    * @param state
    */
-  public logButtonInteraction(state: ButtonState): void {
+  public logButtonInteraction(state: SingleButtonState): void {
     const previous: ButtonLog | undefined = this.button_log.length > 0 ? this.button_log[0] : undefined;
     const current = { date: new Date(), state };
 

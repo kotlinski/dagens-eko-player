@@ -1,7 +1,7 @@
-import ButtonLogger, { LONG_THRESHOLD } from '../button-logger';
+import SingleButtonRecorder, { LONG_THRESHOLD } from '../single-button-recorder';
 
 describe('ButtonLogger', () => {
-  let log: ButtonLogger;
+  let log: SingleButtonRecorder;
   let start_ts: number;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('ButtonLogger', () => {
   });
 
   beforeEach(() => {
-    log = new ButtonLogger();
+    log = new SingleButtonRecorder();
   });
 
   describe('getLog', () => {
