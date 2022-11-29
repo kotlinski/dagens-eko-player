@@ -1,6 +1,6 @@
 import Player from './player/player';
 import SverigesRadioApiClient from './sveriges-radio/sveriges-radio-api-client';
-import ProcessorProvider from './player/processor-provider';
+import VlcProcessSupervisor from './processes/vlc-process-supervisor';
 import Keyboard from './io/keyboard';
 import SingleButtonSequenceInterpreter from './io/single-button-io/button-interpreter';
 import PiButton from './io/pi-button';
@@ -28,12 +28,8 @@ function setUpIO(): (Keyboard | PiButton)[] {
 
 export function bootHardwareFromInput() {
   const program_provider = new SverigesRadioProgramProvider(new SverigesRadioApiClient());
-
-  // todo: separate vlc_process and processor_provider
-  // rename processor-provider to VLC-process provider
-  const processor_provider = new ProcessorProvider(program_provider);
-
-  new Player(processor_provider, setUpIO());
+  const processor_provider = new VlcProcessSupervisor();
+  new Player(processor_provider, setUpIO(), program_provider);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises

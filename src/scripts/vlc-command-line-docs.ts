@@ -1,11 +1,10 @@
-import ProcessorProvider from '../player/processor-provider';
-import SverigesRadioApiClient from '../sveriges-radio/sveriges-radio-api-client';
+import VlcProcessSupervisor from '../processes/vlc-process-supervisor';
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 (async () => {
-  const processor = new ProcessorProvider(new SverigesRadioApiClient());
-  await processor.printProcessorCommands();
+  const process_supervisor = new VlcProcessSupervisor();
+  process_supervisor.accessProcess().printAvailableCommands();
   setTimeout(() => {
-    processor.resetProcessor();
+    process_supervisor.killProcess();
   }, 1_000);
 })();

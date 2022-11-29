@@ -16,7 +16,9 @@ export default class SingleButtonRecorder {
 
     if (previous?.state === state) {
       // Something is wrong, can't register same action twice
-      throw Error(`Registered ${state} twice. ${new Date().toString()} and ${previous.date.toISOString()}`);
+      throw Error(
+        `Registered ${state} twice. ${new Date().toLocaleTimeString('sv-SE')} and ${previous.date.toLocaleTimeString('sv-SE')}`,
+      );
     }
     this.button_log.unshift(current);
 
