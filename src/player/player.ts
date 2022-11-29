@@ -1,5 +1,8 @@
 import ProcessProvider from './processor-provider';
+import CommandEmitter from './command-emitter';
+import { Command } from './command';
 
+// TODO: move this documentation to vlc-process
 /*
 VLC
 > +----[ CLI commands ]
@@ -72,30 +75,37 @@ VLC
  */
 
 export default class Player {
-  constructor(private readonly process_provider: ProcessProvider) {}
-
-  async start(): Promise<void> {
-    await this.process_provider.addEpisodesToPlaylist();
-    await this.performCommand('play');
+  constructor(private readonly process_provider: ProcessProvider, command_emitters: CommandEmitter[]) {
+    command_emitters.forEach((command_emitter) => {
+      command_emitter.registerListener(this.commandHandler());
+    });
   }
 
-  async togglePause() {
-    await this.performCommand('pause');
-  }
-
-  async stop() {
-    this.process_provider.resetProcessor();
-  }
-
-  async next() {
-    await this.performCommand('next');
-  }
-
-  async skip15s() {
-    await this.seekInTime(15);
-  }
-  async rewind15s() {
-    await this.seekInTime(-15);
+  private commandHandler(): (command: Command) => Promise<void> {
+    return async (command: Command) => {
+      console.log(command);
+      switch (command) {
+        case 'START':
+          await this.process_provider.addEpisodesToPlaylist();
+          await this.performCommand('play');
+          break;
+        case 'STOP':
+          this.process_provider.resetProcessor();
+          break;
+        case 'TOGGLE_PAUSE':
+          await this.performCommand('pause');
+          break;
+        case 'NEXT':
+          await this.performCommand('next');
+          break;
+        case 'SKIP_15_S':
+          await this.seekInTime(15);
+          break;
+        case 'REWIND_15_S':
+          await this.seekInTime(-15);
+          break;
+      }
+    };
   }
 
   private async seekInTime(diff_s: number) {
@@ -113,6 +123,7 @@ export default class Player {
 
   private async performCommand(command: string) {
     const process = await this.process_provider.provideProcess();
+    console.log(`performCommand${command}`);
     if (process.stdin) {
       process.stdin.write(`${command}\n`);
     }
