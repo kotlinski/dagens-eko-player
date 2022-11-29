@@ -7,10 +7,11 @@ describe('SverigesRadioApiClient', () => {
   });
   describe('fetchLatestEpisode', () => {
     it('should fetch an object containing an episode url', async () => {
-      const episode_urls = await api_client.fetchLatestEpisodeUrls();
+      const episodes = await api_client.fetchEpisodes('5380', 2);
       // should match an url mp3-file
-      episode_urls.forEach((url) => {
-        expect(url).toMatch(/^(https?:)\/\/(([^:\\/?#]*)(?::([0-9]+))?)(\/?[^?#]*).mp3$/);
+      expect(episodes.length).toEqual(2);
+      episodes.forEach((episode) => {
+        expect(episode).toHaveProperty('listenpodfile');
       });
     });
   });

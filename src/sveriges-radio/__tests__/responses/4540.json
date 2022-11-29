@@ -1,0 +1,143 @@
+[
+  {
+    "id": 2053490,
+    "title": "Dagens Eko: Nyheter, ekonomi, sport och kultur",
+    "description": "Ekots stora dagliga nyhetssändningar. Nyheter och fördjupning – från Sverige och världen. Ansvarig utgivare: Klas Wolf-Watz",
+    "url": "https://sverigesradio.se/avsnitt/2053490",
+    "program": {
+      "id": 4540,
+      "name": "Ekot nyhetssändning"
+    },
+    "audiopreference": "default",
+    "audiopriority": "aac",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669740300000)/",
+    "imageurl": "https://static-cdn.sr.se/images/4540/df283fdb-0de6-4615-893c-6706162658cc.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/4540/df283fdb-0de6-4615-893c-6706162658cc.jpg",
+    "photographer": "",
+    "broadcast": {
+      "availablestoputc": "/Date(1672333500000)/",
+      "playlist": {
+        "duration": 1200,
+        "publishdateutc": "/Date(1669740300000)/",
+        "id": 8598073,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8598073&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053490)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 1200,
+          "publishdateutc": "/Date(1669740300000)/",
+          "id": 8598073,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598073-hi.m4a",
+          "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053490)]"
+        }
+      ]
+    },
+    "broadcasttime": {
+      "starttimeutc": "/Date(1669740300000)/",
+      "endtimeutc": "/Date(1669741500000)/"
+    },
+    "listenpodfile": {
+      "title": "Dagens Eko: Nyheter, ekonomi, sport och kultur 20221129 17:45",
+      "description": "",
+      "filesizeinbytes": 19201403,
+      "program": {
+        "id": 4540,
+        "name": "Ekot nyhetssändning"
+      },
+      "availablefromutc": "/Date(1669740300000)/",
+      "duration": 1200,
+      "publishdateutc": "/Date(1669740300000)/",
+      "id": 8598075,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598075.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053490)]"
+    },
+    "downloadpodfile": {
+      "title": "Dagens Eko: Nyheter, ekonomi, sport och kultur 20221129 17:45",
+      "description": "",
+      "filesizeinbytes": 19201403,
+      "program": {
+        "id": 4540,
+        "name": "Ekot nyhetssändning"
+      },
+      "availablefromutc": "/Date(1669740300000)/",
+      "duration": 1200,
+      "publishdateutc": "/Date(1669740300000)/",
+      "id": 8598075,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598075.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053490)]"
+    },
+    "channelid": 132
+  },
+  {
+    "id": 2053489,
+    "title": "Dagens Eko: Sammanfattning av dagens viktigaste nyheter",
+    "description": "Ekots stora dagliga nyhetssändningar. Nyheter och fördjupning – från Sverige och världen. Ansvarig utgivare: Klas Wolf-Watz",
+    "url": "https://sverigesradio.se/avsnitt/2053489",
+    "program": {
+      "id": 4540,
+      "name": "Ekot nyhetssändning"
+    },
+    "audiopreference": "default",
+    "audiopriority": "aac",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669736700000)/",
+    "imageurl": "https://static-cdn.sr.se/images/4540/df283fdb-0de6-4615-893c-6706162658cc.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/4540/df283fdb-0de6-4615-893c-6706162658cc.jpg",
+    "photographer": "",
+    "broadcast": {
+      "playlist": {
+        "duration": 900,
+        "publishdateutc": "/Date(1669736700000)/",
+        "id": 8597974,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8597974&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053489)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 900,
+          "publishdateutc": "/Date(1669736700000)/",
+          "id": 8597974,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597974-hi.m4a",
+          "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053489)]"
+        }
+      ]
+    },
+    "broadcasttime": {
+      "starttimeutc": "/Date(1669736700000)/",
+      "endtimeutc": "/Date(1669737600000)/"
+    },
+    "listenpodfile": {
+      "title": "Dagens Eko: Sammanfattning av dagens viktigaste nyheter 20221129 16:45",
+      "description": "",
+      "filesizeinbytes": 14401578,
+      "program": {
+        "id": 4540,
+        "name": "Ekot nyhetssändning"
+      },
+      "availablefromutc": "/Date(1669736700000)/",
+      "duration": 900,
+      "publishdateutc": "/Date(1669736700000)/",
+      "id": 8597978,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597978.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053489)]"
+    },
+    "downloadpodfile": {
+      "title": "Dagens Eko: Sammanfattning av dagens viktigaste nyheter 20221129 16:45",
+      "description": "",
+      "filesizeinbytes": 14401578,
+      "program": {
+        "id": 4540,
+        "name": "Ekot nyhetssändning"
+      },
+      "availablefromutc": "/Date(1669736700000)/",
+      "duration": 900,
+      "publishdateutc": "/Date(1669736700000)/",
+      "id": 8597978,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597978.mp3",
+      "statkey": "/app/avsnitt/nyheter (ekot)[k(83)]/ekot nyhetssändning[p(4540)]/[e(2053489)]"
+    },
+    "channelid": 132
+  }
+]

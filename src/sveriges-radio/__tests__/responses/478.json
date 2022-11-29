@@ -1,0 +1,89 @@
+[
+  {
+    "id": 2072941,
+    "title": "Svensk modedesigner: \"Balenciaga stal min BDSM-nalle till barnkampanj\"",
+    "description": "Israels ambassadör i Indien ber om ursäkt för israelisk filmskapares kritik mot filmen The Kashmir Files, Uje Brandelius debuterar i Mello och NRK erbjuder avgångspaket till anställda under 67 år.",
+    "url": "https://sverigesradio.se/avsnitt/2072941",
+    "program": {
+      "id": 478,
+      "name": "Kulturnytt i P1"
+    },
+    "audiopreference": "pod",
+    "audiopriority": "mp3",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669742460000)/",
+    "imageurl": "https://static-cdn.sr.se/images/478/33f7764c-72ee-4f62-b8a7-0f59e0975f45.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/478/33f7764c-72ee-4f62-b8a7-0f59e0975f45.jpg",
+    "photographer": "Kulturnytt eftermiddag",
+    "listenpodfile": {
+      "title": "Svensk modedesigner: \"Balenciaga stal min BDSM-nalle till barnkampanj\"",
+      "description": "",
+      "filesizeinbytes": 4815985,
+      "program": {
+        "id": 478,
+        "name": "Kulturnytt i P1"
+      },
+      "availablefromutc": "/Date(1669742460000)/",
+      "duration": 300,
+      "publishdateutc": "/Date(1669742460000)/",
+      "id": 8598083,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598083.mp3",
+      "statkey": "/app/avsnitt/p1[k(132)]/kulturnytt i p1[p(478)]/[e(2072941)]"
+    },
+    "downloadpodfile": {
+      "title": "Svensk modedesigner: \"Balenciaga stal min BDSM-nalle till barnkampanj\"",
+      "description": "",
+      "filesizeinbytes": 4815985,
+      "program": {
+        "id": 478,
+        "name": "Kulturnytt i P1"
+      },
+      "availablefromutc": "/Date(1669742460000)/",
+      "duration": 300,
+      "publishdateutc": "/Date(1669742460000)/",
+      "id": 8598083,
+      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8598083.mp3",
+      "statkey": "/app/avsnitt/p1[k(132)]/kulturnytt i p1[p(478)]/[e(2072941)]"
+    }
+  },
+  {
+    "id": 2052216,
+    "title": "Sveriges äldsta kyrkomusikerutbildning riskerar nedläggning – pengar saknas",
+    "description": "Viveca Bladh om Ellen Strömbergs bok \"Vi ska ju bara cykla förbi\", vinnaren av Augustpriset för bästa barn- och ungdomsbok, Göteborgsoperan vann \"operavärldens Oscar\" för sitt hållbarhetsarbete.",
+    "url": "https://sverigesradio.se/avsnitt/2052216",
+    "program": {
+      "id": 478,
+      "name": "Kulturnytt i P1"
+    },
+    "audiopreference": "pod",
+    "audiopriority": "mp3",
+    "audiopresentation": "format",
+    "publishdateutc": "/Date(1669708920000)/",
+    "imageurl": "https://static-cdn.sr.se/images/478/c4094286-5576-4aa8-970c-1865908c9cf1.jpg?preset=api-default-square",
+    "imageurltemplate": "https://static-cdn.sr.se/images/478/c4094286-5576-4aa8-970c-1865908c9cf1.jpg",
+    "photographer": "Kulturnytt morgon",
+    "broadcast": {
+      "playlist": {
+        "duration": 360,
+        "publishdateutc": "/Date(1669708920000)/",
+        "id": 8597061,
+        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8597061&codingformat=.m4a&metafile=asx&quality=hi",
+        "statkey": "/app/avsnitt/p1[k(132)]/kulturnytt i p1[p(478)]/[e(2052216)]"
+      },
+      "broadcastfiles": [
+        {
+          "duration": 360,
+          "publishdateutc": "/Date(1669708920000)/",
+          "id": 8597061,
+          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597061-hi.m4a",
+          "statkey": "/app/avsnitt/p1[k(132)]/kulturnytt i p1[p(478)]/[e(2052216)]"
+        }
+      ]
+    },
+    "broadcasttime": {
+      "starttimeutc": "/Date(1669708920000)/",
+      "endtimeutc": "/Date(1669709280000)/"
+    },
+    "channelid": 163
+  }
+]
