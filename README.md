@@ -1,8 +1,10 @@
-[![CodeQL](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml/badge.svg)](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml)
-
 # dagens-eko-player
 
 A daily news radio player. Using a raspberry pi as hardware and the Swedish Radio as news source.
+
+[![CodeQL](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml/badge.svg)](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml)
+[![CodeQL](https://github.com/kotlinski/dagens-eko-player/coverage/badge-lines.svg)](https://github.com/kotlinski/dagens-eko-player/coverage)
+
 
 ## prerequisites
 
