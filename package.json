@@ -18,8 +18,8 @@
     "format": "prettier --loglevel=silent --write .",
     "format-check": "prettier --check .",
     "test": "jest",
-    "test:coverage": "npm test -- --coverage",
-    "test:badges": "npm run test:coverage  && jest-coverage-badges",
+    "test:coverage": "test -- --coverage",
+    "badges": "jest-coverage-badges",
     "vlc-help": "ts-node src/scripts/vlc-command-line-docs.ts"
   },
   "prettier": "@springworks/prettier-config",
