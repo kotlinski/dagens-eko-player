@@ -11,7 +11,7 @@ describe('SverigesRadioApiClient', () => {
       // should match an url mp3-file
       expect(episodes.length).toEqual(2);
       episodes.forEach((episode) => {
-        expect(episode).toHaveProperty('listenpodfile');
+        expect(episode).toHaveProperty('description');
       });
     });
   });

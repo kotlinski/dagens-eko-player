@@ -22,3 +22,9 @@ jobs:
         run: yarn test
       - name: Run tests and generate coverage badge
         run: yarn run test:badges
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage-badge
+          path: |
+            coverage/badge-functions.svg
+            coverage/badge-lines.svg
