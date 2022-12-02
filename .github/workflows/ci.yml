@@ -18,7 +18,4 @@ jobs:
           yarn lint
           yarn format
       - name: Run tests
-        if: github.ref != 'refs/heads/main'
         run: yarn test
-      - name: Run tests and generate coverage badge
-        run: yarn run test:badges
