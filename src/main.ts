@@ -5,6 +5,7 @@ import Keyboard from './io/keyboard';
 import SingleButtonSequenceInterpreter from './io/single-button-io/button-interpreter';
 import PiButton from './io/pi-button';
 import SverigesRadioProgramProvider from './sveriges-radio/sveriges-radio-program-provider';
+import ApiResponseTransformer from './sveriges-radio/api-response-transformer';
 
 function setUpIO(): (Keyboard | PiButton)[] {
   const single_button_sequence_interpreter = new SingleButtonSequenceInterpreter();
@@ -27,7 +28,7 @@ function setUpIO(): (Keyboard | PiButton)[] {
 }
 
 export function bootHardwareFromInput() {
-  const program_provider = new SverigesRadioProgramProvider(new SverigesRadioApiClient());
+  const program_provider = new SverigesRadioProgramProvider(new SverigesRadioApiClient(), new ApiResponseTransformer());
   const processor_provider = new VlcProcessSupervisor();
   new Player(processor_provider, setUpIO(), program_provider);
 }

@@ -7,6 +7,7 @@ import mock_response_2895 from './responses/2895.json';
 import mock_response_4540 from './responses/4540.json';
 import mock_response_5380 from './responses/5380.json';
 import { when } from 'jest-when';
+import ApiResponseTransformer from '../api-response-transformer';
 
 describe('SverigesRadioApiClient', () => {
   let provider: SverigesRadioProgramProvider;
@@ -14,7 +15,7 @@ describe('SverigesRadioApiClient', () => {
   beforeEach(() => {
     const api_client: SverigesRadioApiClient = new SverigesRadioApiClient();
     api_mock = jest.spyOn(api_client, 'fetchEpisodes');
-    provider = new SverigesRadioProgramProvider(api_client);
+    provider = new SverigesRadioProgramProvider(api_client, new ApiResponseTransformer());
   });
   describe('fetchLatestEpisode', () => {
     let urls: string[];
@@ -42,13 +43,13 @@ describe('SverigesRadioApiClient', () => {
     it('should contain expected urls', async () => {
       // should match an url mp3-file
       expect(urls).toEqual([
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8598068.mp3',
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8598075.mp3',
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8597854.mp3',
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8597021.mp3',
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8598083.mp3',
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8597769.mp3',
-        'https://sverigesradio.se/topsy/ljudfil/srapi/8596821.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8603124.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8603100.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8601833.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8603103.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8602914.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8602757.mp3',
+        'https://sverigesradio.se/topsy/ljudfil/srapi/8601648.mp3',
       ]);
     });
   });

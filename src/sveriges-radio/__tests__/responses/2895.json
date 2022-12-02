@@ -1,144 +1,154 @@
-[
-  {
-    "id": 2052618,
-    "title": "Radiosporten",
-    "description": "Med det senaste i sportens värld.",
-    "url": "https://sverigesradio.se/avsnitt/2052618",
-    "program": {
-      "id": 2895,
-      "name": "Radiosportens nyhetssändningar"
-    },
-    "audiopreference": "default",
-    "audiopriority": "aac",
-    "audiopresentation": "format",
-    "availableuntilutc": "2022-12-29T14:42:00Z",
-    "publishdateutc": "/Date(1669732680000)/",
-    "imageurl": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg?preset=api-default-square",
-    "imageurltemplate": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg",
-    "broadcast": {
-      "availablestoputc": "/Date(1672324920000)/",
-      "playlist": {
-        "duration": 240,
-        "publishdateutc": "/Date(1669732680000)/",
-        "id": 8597768,
-        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8597768&codingformat=.m4a&metafile=asx&quality=hi",
-        "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052618)]"
-      },
-      "broadcastfiles": [
-        {
-          "duration": 240,
-          "publishdateutc": "/Date(1669732680000)/",
-          "id": 8597768,
-          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597768-hi.m4a",
-          "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052618)]"
-        }
-      ]
-    },
-    "broadcasttime": {
-      "starttimeutc": "/Date(1669732680000)/",
-      "endtimeutc": "/Date(1669732920000)/"
-    },
-    "listenpodfile": {
-      "title": "Radiosporten 20221129 15:38",
-      "description": "",
-      "filesizeinbytes": 3884233,
+{
+  "copyright": "Copyright Sveriges Radio 2022. All rights reserved.",
+  "episodes": [
+    {
+      "id": 2052746,
+      "title": "Radiosporten",
+      "description": "Med det senaste i sportens värld.",
+      "url": "https://sverigesradio.se/avsnitt/2052746",
       "program": {
         "id": 2895,
         "name": "Radiosportens nyhetssändningar"
       },
-      "availablefromutc": "/Date(1669732680000)/",
-      "duration": 240,
-      "publishdateutc": "/Date(1669732680000)/",
-      "id": 8597769,
-      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597769.mp3",
-      "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052618)]"
+      "audiopreference": "default",
+      "audiopriority": "aac",
+      "audiopresentation": "format",
+      "availableuntilutc": "2023-01-01T21:12:00Z",
+      "publishdateutc": "/Date(1670015400000)/",
+      "imageurl": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg?preset=api-default-square",
+      "imageurltemplate": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg",
+      "broadcast": {
+        "availablestoputc": "/Date(1672607520000)/",
+        "playlist": {
+          "duration": 120,
+          "publishdateutc": "/Date(1670015400000)/",
+          "id": 8603102,
+          "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8603102&codingformat=.m4a&metafile=asx&quality=hi",
+          "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052746)]"
+        },
+        "broadcastfiles": [
+          {
+            "duration": 120,
+            "publishdateutc": "/Date(1670015400000)/",
+            "id": 8603102,
+            "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603102-hi.m4a",
+            "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052746)]"
+          }
+        ]
+      },
+      "broadcasttime": {
+        "starttimeutc": "/Date(1670015400000)/",
+        "endtimeutc": "/Date(1670015520000)/"
+      },
+      "listenpodfile": {
+        "title": "Radiosporten 20221202 22:10",
+        "description": "",
+        "filesizeinbytes": 1948664,
+        "program": {
+          "id": 2895,
+          "name": "Radiosportens nyhetssändningar"
+        },
+        "availablefromutc": "/Date(1670015400000)/",
+        "duration": 120,
+        "publishdateutc": "/Date(1670015400000)/",
+        "id": 8603103,
+        "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603103.mp3",
+        "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052746)]"
+      },
+      "downloadpodfile": {
+        "title": "Radiosporten 20221202 22:10",
+        "description": "",
+        "filesizeinbytes": 1948664,
+        "program": {
+          "id": 2895,
+          "name": "Radiosportens nyhetssändningar"
+        },
+        "availablefromutc": "/Date(1670015400000)/",
+        "duration": 120,
+        "publishdateutc": "/Date(1670015400000)/",
+        "id": 8603103,
+        "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603103.mp3",
+        "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052746)]"
+      },
+      "channelid": 701
     },
-    "downloadpodfile": {
-      "title": "Radiosporten 20221129 15:38",
-      "description": "",
-      "filesizeinbytes": 3884233,
+    {
+      "id": 2052389,
+      "title": "Radiosporten",
+      "description": "Med det senaste i sportens värld.",
+      "url": "https://sverigesradio.se/avsnitt/2052389",
       "program": {
         "id": 2895,
         "name": "Radiosportens nyhetssändningar"
       },
-      "availablefromutc": "/Date(1669732680000)/",
-      "duration": 240,
-      "publishdateutc": "/Date(1669732680000)/",
-      "id": 8597769,
-      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597769.mp3",
-      "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052618)]"
-    },
-    "channelid": 701
-  },
-  {
-    "id": 2053485,
-    "title": "Radiosporten",
-    "description": "Med det senaste i sportens värld.",
-    "url": "https://sverigesradio.se/avsnitt/2053485",
-    "program": {
-      "id": 2895,
-      "name": "Radiosportens nyhetssändningar"
-    },
-    "audiopreference": "default",
-    "audiopriority": "aac",
-    "audiopresentation": "format",
-    "availableuntilutc": "2022-12-29T14:04:00Z",
-    "publishdateutc": "/Date(1669730580000)/",
-    "imageurl": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg?preset=api-default-square",
-    "imageurltemplate": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg",
-    "broadcast": {
-      "availablestoputc": "/Date(1672322640000)/",
-      "playlist": {
-        "duration": 60,
-        "publishdateutc": "/Date(1669730580000)/",
-        "id": 8597688,
-        "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8597688&codingformat=.m4a&metafile=asx&quality=hi",
-        "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2053485)]"
+      "audiopreference": "default",
+      "audiopriority": "aac",
+      "audiopresentation": "format",
+      "availableuntilutc": "2023-01-01T19:06:00Z",
+      "publishdateutc": "/Date(1670007780000)/",
+      "imageurl": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg?preset=api-default-square",
+      "imageurltemplate": "https://static-cdn.sr.se/images/2895/ce87c778-b2b0-4f51-a6e1-79c9d71bf75a.jpg",
+      "broadcast": {
+        "availablestoputc": "/Date(1672599960000)/",
+        "playlist": {
+          "duration": 180,
+          "publishdateutc": "/Date(1670007780000)/",
+          "id": 8603042,
+          "url": "https://api.sr.se/api/radio/radio.aspx?type=broadcast&id=8603042&codingformat=.m4a&metafile=asx&quality=hi",
+          "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052389)]"
+        },
+        "broadcastfiles": [
+          {
+            "duration": 180,
+            "publishdateutc": "/Date(1670007780000)/",
+            "id": 8603042,
+            "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603042-hi.m4a",
+            "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052389)]"
+          }
+        ]
       },
-      "broadcastfiles": [
-        {
-          "duration": 60,
-          "publishdateutc": "/Date(1669730580000)/",
-          "id": 8597688,
-          "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597688-hi.m4a",
-          "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2053485)]"
-        }
-      ]
-    },
-    "broadcasttime": {
-      "starttimeutc": "/Date(1669730580000)/",
-      "endtimeutc": "/Date(1669730640000)/"
-    },
-    "listenpodfile": {
-      "title": "Radiosporten 20221129 15:03",
-      "description": "",
-      "filesizeinbytes": 961179,
-      "program": {
-        "id": 2895,
-        "name": "Radiosportens nyhetssändningar"
+      "broadcasttime": {
+        "starttimeutc": "/Date(1670007780000)/",
+        "endtimeutc": "/Date(1670007960000)/"
       },
-      "availablefromutc": "/Date(1669730580000)/",
-      "duration": 60,
-      "publishdateutc": "/Date(1669730580000)/",
-      "id": 8597692,
-      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597692.mp3",
-      "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2053485)]"
-    },
-    "downloadpodfile": {
-      "title": "Radiosporten 20221129 15:03",
-      "description": "",
-      "filesizeinbytes": 961179,
-      "program": {
-        "id": 2895,
-        "name": "Radiosportens nyhetssändningar"
+      "listenpodfile": {
+        "title": "Radiosporten 20221202 20:03",
+        "description": "",
+        "filesizeinbytes": 2881283,
+        "program": {
+          "id": 2895,
+          "name": "Radiosportens nyhetssändningar"
+        },
+        "availablefromutc": "/Date(1670007780000)/",
+        "duration": 180,
+        "publishdateutc": "/Date(1670007780000)/",
+        "id": 8603043,
+        "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603043.mp3",
+        "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052389)]"
       },
-      "availablefromutc": "/Date(1669730580000)/",
-      "duration": 60,
-      "publishdateutc": "/Date(1669730580000)/",
-      "id": 8597692,
-      "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8597692.mp3",
-      "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2053485)]"
-    },
-    "channelid": 132
+      "downloadpodfile": {
+        "title": "Radiosporten 20221202 20:03",
+        "description": "",
+        "filesizeinbytes": 2881283,
+        "program": {
+          "id": 2895,
+          "name": "Radiosportens nyhetssändningar"
+        },
+        "availablefromutc": "/Date(1670007780000)/",
+        "duration": 180,
+        "publishdateutc": "/Date(1670007780000)/",
+        "id": 8603043,
+        "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603043.mp3",
+        "statkey": "/app/avsnitt/radiosporten[k(179)]/radiosportens nyhetssändningar[p(2895)]/[e(2052389)]"
+      },
+      "channelid": 164
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "size": 2,
+    "totalhits": 685,
+    "totalpages": 343,
+    "nextpage": "https://api.sr.se/v2/episodes/index?programid=2895&audioquality=hi&format=json&size=2&page=2"
   }
-]
+}
