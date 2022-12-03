@@ -1,11 +1,11 @@
-import Player from './player/player';
-import SverigesRadioApiClient from './sveriges-radio/sveriges-radio-api-client';
+import Player from './radio/player';
+import ApiClient from './sveriges-radio/api-client/api-client';
 import VlcProcessSupervisor from './processes/vlc-process-supervisor';
 import Keyboard from './io/keyboard';
 import SingleButtonSequenceInterpreter from './io/single-button-io/button-interpreter';
 import PiButton from './io/pi-button';
-import SverigesRadioProgramProvider from './sveriges-radio/sveriges-radio-program-provider';
-import ApiResponseTransformer from './sveriges-radio/api-response-transformer';
+import RadioUrlProvider from './sveriges-radio/radio-url-provider';
+import EpisodesProvider from './sveriges-radio/episodes-provider/episodes-provider';
 
 function setUpIO(): (Keyboard | PiButton)[] {
   const single_button_sequence_interpreter = new SingleButtonSequenceInterpreter();
@@ -28,7 +28,7 @@ function setUpIO(): (Keyboard | PiButton)[] {
 }
 
 export function bootHardwareFromInput() {
-  const program_provider = new SverigesRadioProgramProvider(new SverigesRadioApiClient(), new ApiResponseTransformer());
+  const program_provider = new RadioUrlProvider(new EpisodesProvider(new ApiClient()));
   const processor_provider = new VlcProcessSupervisor();
   new Player(processor_provider, setUpIO(), program_provider);
 }
