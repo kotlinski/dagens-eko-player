@@ -2,7 +2,7 @@ import Player from './radio/player';
 import ApiClient from './sveriges-radio/api-client/api-client';
 import VlcProcessSupervisor from './processes/vlc-process-supervisor';
 import Keyboard from './io/keyboard';
-import SingleButtonSequenceInterpreter from './io/single-button-io/button-interpreter';
+import SingleButtonSequenceInterpreter from './io/single-button-io/interpreter/button-interpreter';
 import PiButton from './io/pi-button';
 import RadioUrlProvider from './sveriges-radio/radio-url-provider';
 import EpisodesProvider from './sveriges-radio/episodes-provider/episodes-provider';

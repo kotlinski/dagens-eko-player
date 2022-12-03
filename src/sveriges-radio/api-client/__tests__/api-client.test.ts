@@ -7,7 +7,7 @@ describe('SverigesRadioApiClient', () => {
   });
   describe('fetchLatestEpisode', () => {
     it('should fetch an object containing an episode url', async () => {
-      const response = await api_client.fetchEpisodes('5380', 2);
+      const response = await api_client.fetchEpisodes(5380, 2);
       expect(response.episodes.length).toEqual(2);
       response.episodes.forEach((episode) => {
         expect(episode).toHaveProperty('description');
