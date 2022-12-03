@@ -1,6 +1,5 @@
-import { ButtonLog, SingleButtonState } from './button-interfaces';
-import { LONG_THRESHOLD } from './single-button-recorder';
-import { Command } from '../../radio/command';
+import { ButtonLog, SingleButtonState } from '../button-interfaces';
+import { Command } from '../../../radio/command';
 
 type Event = 'TAP' | 'CLOSED' | 'SHORT_OPEN' | 'OPEN';
 type Pattern =
@@ -12,6 +11,7 @@ type Pattern =
   | 'DOUBLE_TAP'
   | 'TRIPLE_TAP'
   | 'QUADRUPLE_TAP';
+export const LONG_THRESHOLD = 750; // milliseconds until a "tap" becomes a "long press"
 
 export default class ButtonInterpreter {
   // Caution: the order of entries matters
@@ -49,16 +49,16 @@ export default class ButtonInterpreter {
     }, []);
   }
 
-  private findPattern(sequence: Event[]): Pattern | undefined {
+  private findPattern(sequence: Event[]): Pattern {
     for (const key in this.patterns) {
       if (this.startsWith(sequence, this.patterns[key as Pattern])) {
         return key as Pattern;
       }
     }
-    return undefined;
+    throw new Error('The impossible has happened');
   }
 
-  public parseCommand(button_log: ButtonLog[]): Command | undefined {
+  public parseButtonLog(button_log: ButtonLog[]): Command | undefined {
     const sequence = this.getButtonSequence(button_log);
     if (sequence.length === 0) {
       console.error('No commands to parse');
@@ -70,10 +70,6 @@ export default class ButtonInterpreter {
       return;
     }
     const matched_pattern = this.findPattern(sequence);
-    if (!matched_pattern) {
-      console.log('no pattern found');
-      return;
-    }
     console.log(`found pattern ${matched_pattern}`);
 
     switch (matched_pattern) {

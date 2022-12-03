@@ -3,8 +3,8 @@
  * Currently supporting a keyboard or a pi button
  *
  */
-import SingleButtonRecorder, { LONG_THRESHOLD } from './single-button-recorder';
-import SingleButtonSequenceInterpreter from './button-interpreter';
+import SingleButtonRecorder from './recorder/single-button-recorder';
+import SingleButtonSequenceInterpreter, { LONG_THRESHOLD } from './interpreter/button-interpreter';
 import { SingleButtonState } from './button-interfaces';
 import CommandEmitter from '../../radio/command-emitter';
 import { Command } from '../../radio/command';
@@ -32,7 +32,7 @@ export default abstract class SingleButtonAbstract implements CommandEmitter {
   private delayedHandler() {
     // before taking any action on the button sequence, we need to wait a bit
     setTimeout(() => {
-      const command = this.interpreter.parseCommand(this.button_recorder.getLog());
+      const command = this.interpreter.parseButtonLog(this.button_recorder.getLog());
       if (!command) {
         return;
       }
