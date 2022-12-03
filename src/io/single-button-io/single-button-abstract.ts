@@ -6,8 +6,8 @@
 import SingleButtonRecorder, { LONG_THRESHOLD } from './single-button-recorder';
 import SingleButtonSequenceInterpreter from './button-interpreter';
 import { SingleButtonState } from './button-interfaces';
-import CommandEmitter from '../../player/command-emitter';
-import { Command } from '../../player/command';
+import CommandEmitter from '../../radio/command-emitter';
+import { Command } from '../../radio/command';
 
 export default abstract class SingleButtonAbstract implements CommandEmitter {
   protected readonly button_recorder: SingleButtonRecorder;

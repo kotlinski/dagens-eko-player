@@ -1,6 +1,6 @@
 import { ButtonLog, SingleButtonState } from './button-interfaces';
 import { LONG_THRESHOLD } from './single-button-recorder';
-import { Command } from '../../player/command';
+import { Command } from '../../radio/command';
 
 type Event = 'TAP' | 'CLOSED' | 'SHORT_OPEN' | 'OPEN';
 type Pattern =
