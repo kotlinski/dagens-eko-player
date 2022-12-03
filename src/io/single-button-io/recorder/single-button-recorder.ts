@@ -1,30 +1,33 @@
-import { ButtonLog, SingleButtonState } from './button-interfaces';
+import { ButtonLog, SingleButtonState } from '../button-interfaces';
 
-export const LONG_THRESHOLD = 750; // milliseconds until a "tap" becomes a "long press"
 export default class SingleButtonRecorder {
   button_log: ButtonLog[] = [];
 
   /**
    * Adds a state to the history. "Duplicates" will be invalidated and cleaned out
-   * The log will hold maximum 50 events
+   * The log will keep a maximum 50 events in memory
    *
-   * @param state
+   * @param new_interaction
    */
-  public logButtonInteraction(state: SingleButtonState): void {
-    const previous: ButtonLog | undefined = this.button_log.length > 0 ? this.button_log[0] : undefined;
-    const current = { date: new Date(), state };
+  public logButtonInteraction(new_interaction: SingleButtonState): void {
+    const prior_interaction = this.button_log.length > 0 ? this.button_log[0] : undefined;
+    this.verifyInput(prior_interaction, new_interaction);
+    this.button_log.unshift({ date: new Date(), state: new_interaction });
+    this.pruneOutdatedLogs();
+  }
 
+  private verifyInput(previous: ButtonLog | undefined, state: 'PRESSED' | 'RELEASED') {
     if (previous?.state === state) {
       // Something is wrong, can't register same action twice
       throw Error(
         `Registered ${state} twice. ${new Date().toLocaleTimeString('sv-SE')} and ${previous.date.toLocaleTimeString('sv-SE')}`,
       );
     }
-    this.button_log.unshift(current);
+  }
 
-    // We don't really care about too many sequences
+  private pruneOutdatedLogs() {
     if (this.button_log.length > 50) {
-      this.button_log.slice(0, 50);
+      this.button_log = this.button_log.slice(0, 50);
     }
   }
 

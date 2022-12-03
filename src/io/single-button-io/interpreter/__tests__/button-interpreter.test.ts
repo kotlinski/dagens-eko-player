@@ -1,9 +1,11 @@
-import ButtonInterpreter from '../button-interpreter';
-import SingleButtonRecorder from '../single-button-recorder';
+import ButtonInterpreter, { LONG_THRESHOLD } from '../button-interpreter';
+import SingleButtonRecorder from '../../recorder/single-button-recorder';
+import { ButtonLog, SingleButtonState } from '../../button-interfaces';
 
 describe('button-interpreter', () => {
   let interpreter: ButtonInterpreter;
   let button_recorder: SingleButtonRecorder;
+  let log: ButtonLog[];
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -13,14 +15,33 @@ describe('button-interpreter', () => {
     button_recorder = new SingleButtonRecorder();
     interpreter = new ButtonInterpreter();
   });
-  describe('getNextCommands', () => {
+  describe('parseButtonLog', () => {
+    describe('with an empty log', () => {
+      it('should return undefined', () => {
+        expect(interpreter.parseButtonLog([])).toEqual(undefined);
+      });
+    });
+    describe('with an unknown pattern', () => {
+      it('should throw', () => {
+        log = [{ state: 'AN-UNKNOWN-COMMAND' as SingleButtonState, date: new Date(1) }];
+        expect(() => interpreter.parseButtonLog(log)).toThrow('The impossible has happened');
+      });
+    });
+    describe(`when it hasn't passed a "LONG_THRESHOLD" (${LONG_THRESHOLD} ms) since the last interaction`, () => {
+      beforeEach(() => {
+        log = [{ state: 'RELEASED', date: new Date() }];
+      });
+      it('should simply ignore and return undefined', () => {
+        expect(interpreter.parseButtonLog(log)).toEqual(undefined);
+      });
+    });
     describe('a scenario where the radio has booted in a closed state and got opened', () => {
       beforeEach(() => {
-        button_recorder.logButtonInteraction('RELEASED');
+        log = [{ state: 'RELEASED', date: new Date() }];
         jest.advanceTimersByTime(1_000);
       });
       it('should reset and play', () => {
-        expect(interpreter.parseCommand(button_recorder.getLog())).toEqual('START');
+        expect(interpreter.parseButtonLog(log)).toEqual('START');
       });
     });
     describe('a scenario where the radio has booted in an open state and got closed', () => {
@@ -29,7 +50,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(1_000);
       });
       it('should pause', () => {
-        expect(interpreter.parseCommand(button_recorder.getLog())).toEqual('STOP');
+        expect(interpreter.parseButtonLog(button_recorder.getLog())).toEqual('STOP');
       });
     });
     describe('when radio is opened and got a tap', () => {
@@ -42,7 +63,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(1_000);
       });
       it('should toggle play', () => {
-        expect(interpreter.parseCommand(button_recorder.getLog())).toEqual('TOGGLE_PAUSE');
+        expect(interpreter.parseButtonLog(button_recorder.getLog())).toEqual('TOGGLE_PAUSE');
       });
     });
     describe('with two short and one long press', function () {
@@ -66,7 +87,7 @@ describe('button-interpreter', () => {
         jest.advanceTimersByTime(5_000);
       });
       it('should pause and ignore the prior short taps', () => {
-        expect(interpreter.parseCommand(button_recorder.getLog())).toEqual('START');
+        expect(interpreter.parseButtonLog(button_recorder.getLog())).toEqual('START');
       });
     });
   });
