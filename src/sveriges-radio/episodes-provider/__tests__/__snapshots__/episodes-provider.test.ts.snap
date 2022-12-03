@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApiResponseTransformer transformApiResponse given a response "Ekonomiekot" response 1`] = `
+Array [
+  Object {
+    "description": "Ekonomiekot är Ekots nyhetsprogram om senaste nytt i ekonomins värld.",
+    "program": Object {
+      "id": 178,
+      "name": "Ekonomiekot",
+    },
+    "publish_date": 2022-12-02T07:32:00.000Z,
+    "title": "Ekonomiekot",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8601833.mp3",
+  },
+  Object {
+    "description": "Ekonomiekot är Ekots nyhetsprogram om senaste nytt i ekonomins värld.",
+    "program": Object {
+      "id": 178,
+      "name": "Ekonomiekot",
+    },
+    "publish_date": 2022-12-02T06:32:00.000Z,
+    "title": "Ekonomiekot",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8601735.mp3",
+  },
+]
+`;
+
+exports[`ApiResponseTransformer transformApiResponse given a response "Ekot nyhetssändning" response 1`] = `
+Array [
+  Object {
+    "description": "Ekots stora dagliga nyhetssändningar. Nyheter och fördjupning – från Sverige och världen. Ansvarig utgivare: Klas Wolf-Watz",
+    "program": Object {
+      "id": 4540,
+      "name": "Ekot nyhetssändning",
+    },
+    "publish_date": 2022-12-02T21:00:00.000Z,
+    "title": "Kvällsekot: Ger dig koll på nyhetsläget vid dagens slut",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603100.mp3",
+  },
+  Object {
+    "description": "Ekots stora dagliga nyhetssändningar. Nyheter och fördjupning – från Sverige och världen. Ansvarig utgivare: Klas Wolf-Watz",
+    "program": Object {
+      "id": 4540,
+      "name": "Ekot nyhetssändning",
+    },
+    "publish_date": 2022-12-02T16:45:00.000Z,
+    "title": "Dagens Eko: Nyheter, ekonomi, sport och kultur",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8602987.mp3",
+  },
+]
+`;
+
+exports[`ApiResponseTransformer transformApiResponse given a response "Ekot senaste nytt" response 1`] = `
+Array [
+  Object {
+    "description": "Senaste nytt varje timme från Ekoredaktionen.",
+    "program": Object {
+      "id": 5380,
+      "name": "Ekot senaste nytt",
+    },
+    "publish_date": 2022-12-02T22:00:00.000Z,
+    "title": "Nyheter från Ekot",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603124.mp3",
+  },
+  Object {
+    "description": "Senaste nytt varje timme från Ekoredaktionen.",
+    "program": Object {
+      "id": 5380,
+      "name": "Ekot senaste nytt",
+    },
+    "publish_date": 2022-12-02T21:00:00.000Z,
+    "title": "Nyheter från Ekot",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603096.mp3",
+  },
+]
+`;
+
+exports[`ApiResponseTransformer transformApiResponse given a response "Kulturnytt i P1" response 1`] = `
+Array [
+  Object {
+    "description": "Filmfotografen Sven Nykvist hyllas i helgen - filmaren Sophia Olsson om vad som gjorde hans konstnärsskap unikt.",
+    "program": Object {
+      "id": 478,
+      "name": "Kulturnytt i P1",
+    },
+    "publish_date": 2022-12-02T16:30:00.000Z,
+    "title": "Världens bästa filmer kastas om – kvinnlig regissör toppar listan",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8602914.mp3",
+  },
+  Object {
+    "description": "Nyhetssändning från kulturredaktionen P1, med reportage, nyheter och recensioner.",
+    "program": Object {
+      "id": 478,
+      "name": "Kulturnytt i P1",
+    },
+    "publish_date": 2022-12-02T14:54:00.000Z,
+    "title": "Kulturnytt",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8602757.mp3",
+  },
+]
+`;
+
+exports[`ApiResponseTransformer transformApiResponse given a response "Radiosportens nyhetssändningar" response 1`] = `
+Array [
+  Object {
+    "description": "Med det senaste i sportens värld.",
+    "program": Object {
+      "id": 2895,
+      "name": "Radiosportens nyhetssändningar",
+    },
+    "publish_date": 2022-12-02T21:10:00.000Z,
+    "title": "Radiosporten",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603103.mp3",
+  },
+  Object {
+    "description": "Med det senaste i sportens värld.",
+    "program": Object {
+      "id": 2895,
+      "name": "Radiosportens nyhetssändningar",
+    },
+    "publish_date": 2022-12-02T19:03:00.000Z,
+    "title": "Radiosporten",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8603043.mp3",
+  },
+]
+`;
+
+exports[`ApiResponseTransformer transformApiResponse given a response "Vetenskapsradion Nyheter" response 1`] = `
+Array [
+  Object {
+    "description": "Vetenskapsnyheter från alla tänkbara forskningsområden. Här får du som lyssnare ofta höra nyheten innan den blir uppmärksammad av övriga media. Sänds i P1.",
+    "program": Object {
+      "id": 406,
+      "name": "Vetenskapsradion Nyheter",
+    },
+    "publish_date": 2022-12-02T05:34:00.000Z,
+    "title": "Nyheter från Vetenskapsradion",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8601648.mp3",
+  },
+  Object {
+    "description": "Vetenskapsnyheter från alla tänkbara forskningsområden. Här får du som lyssnare ofta höra nyheten innan den blir uppmärksammad av övriga media. Sänds i P1.",
+    "program": Object {
+      "id": 406,
+      "name": "Vetenskapsradion Nyheter",
+    },
+    "publish_date": 2022-12-01T05:34:00.000Z,
+    "title": "Nyheter från Vetenskapsradion",
+    "url": "https://sverigesradio.se/topsy/ljudfil/srapi/8600025.mp3",
+  },
+]
+`;

@@ -1,13 +1,15 @@
 import VlcProcessSupervisor from '../processes/vlc-process-supervisor';
 import CommandEmitter from './command-emitter';
 import { Command } from './command';
-import SverigesRadioProgramProvider from '../sveriges-radio/sveriges-radio-program-provider';
+import RadioUrlProvider from '../sveriges-radio/radio-url-provider';
+import { getNewsProgramIds, getOtherNewsProgramIds } from '../sveriges-radio/news-program-ids';
 
 export default class Player {
+  private readonly program_ids = [getNewsProgramIds(), getOtherNewsProgramIds()];
   constructor(
     private readonly vlc_process_supervisor: VlcProcessSupervisor,
     command_emitters: CommandEmitter[],
-    private readonly program_provider: SverigesRadioProgramProvider,
+    private readonly program_provider: RadioUrlProvider,
   ) {
     command_emitters.forEach((command_emitter) => {
       command_emitter.registerListener(this.commandHandler());
@@ -20,7 +22,7 @@ export default class Player {
       console.log(command);
       switch (command) {
         case 'START':
-          await vlc_process.addEpisodesToPlaylist(await this.program_provider.fetchLatestEpisodeUrls());
+          await vlc_process.addEpisodesToPlaylist(await this.program_provider.fetchLatestEpisodeUrls(this.program_ids));
           vlc_process.command('play');
           break;
         case 'STOP':

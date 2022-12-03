@@ -1,14 +1,13 @@
-import SverigesRadioApiClient from '../sveriges-radio-api-client';
+import ApiClient from '../api-client';
 
 describe('SverigesRadioApiClient', () => {
-  let api_client: SverigesRadioApiClient;
+  let api_client: ApiClient;
   beforeEach(() => {
-    api_client = new SverigesRadioApiClient();
+    api_client = new ApiClient();
   });
   describe('fetchLatestEpisode', () => {
     it('should fetch an object containing an episode url', async () => {
       const response = await api_client.fetchEpisodes('5380', 2);
-      // should match an url mp3-file
       expect(response.episodes.length).toEqual(2);
       response.episodes.forEach((episode) => {
         expect(episode).toHaveProperty('description');
