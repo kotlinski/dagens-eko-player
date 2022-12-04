@@ -1,7 +1,7 @@
 import { Gpio, ValueCallback } from 'onoff';
 import SingleButtonAbstract from './single-button-io/single-button-abstract';
 
-import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-interpreter';
+import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-sequence-interpreter';
 
 enum BinaryButtonValue {
   PRESSED,

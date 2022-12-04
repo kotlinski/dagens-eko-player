@@ -1,7 +1,7 @@
 import SingleButtonAbstract from './single-button-io/single-button-abstract';
 
 import readline, { Interface } from 'readline';
-import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-interpreter';
+import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-sequence-interpreter';
 import CommandEmitter from '../radio/command-emitter';
 
 export default class Keyboard extends SingleButtonAbstract implements CommandEmitter {
