@@ -1,5 +1,5 @@
 import SingleButtonRecorder from '../single-button-recorder';
-import { LONG_THRESHOLD } from '../../interpreter/button-interpreter';
+import { LONG_THRESHOLD } from '../../interpreter/button-sequence-interpreter';
 
 describe('SingleButtonRecorder', () => {
   let recorder: SingleButtonRecorder;
@@ -24,10 +24,11 @@ describe('SingleButtonRecorder', () => {
       });
       it('should ignore duplicate actions and throw', () => {
         expect(() => recorder.logButtonInteraction('RELEASED')).toThrow();
-        expect(recorder.getLog()).toEqual([
+        expect(recorder.getRawLog()).toEqual([
           { state: 'RELEASED', date: new Date(start_ts + 2) },
           { state: 'PRESSED', date: new Date(start_ts) },
         ]);
+        expect(recorder.getButtonSequence()).toEqual(['SHORT_OPEN', 'TAP']);
       });
     });
     describe('with more than 50 registered interactions', () => {
@@ -40,20 +41,23 @@ describe('SingleButtonRecorder', () => {
         }
       });
       it('should never store more than 50 events', () => {
-        expect(recorder.getLog().length).toEqual(50);
+        expect(recorder.getRawLog().length).toEqual(50);
+        expect(recorder.getButtonSequence().length).toEqual(50);
       });
     });
   });
-  describe('getLog', () => {
+  describe('getLog, getButtonSequence', () => {
     describe('without history', () => {
       it('should return an empty array', () => {
-        expect(recorder.getLog()).toEqual([]);
+        expect(recorder.getRawLog()).toEqual([]);
+        expect(recorder.getButtonSequence()).toEqual([]);
       });
     });
     describe('with one entry', () => {
       it('should return an array with one entry', () => {
         recorder.logButtonInteraction('PRESSED');
-        expect(recorder.getLog()).toEqual([{ state: 'PRESSED', date: new Date(start_ts) }]);
+        expect(recorder.getRawLog()).toEqual([{ state: 'PRESSED', date: new Date(start_ts) }]);
+        expect(recorder.getButtonSequence()).toEqual(['TAP']);
       });
     });
     describe('with two entries', () => {
@@ -64,10 +68,11 @@ describe('SingleButtonRecorder', () => {
         jest.advanceTimersByTime(500);
       });
       it('should return an array with one entry', () => {
-        expect(recorder.getLog()).toEqual([
+        expect(recorder.getRawLog()).toEqual([
           { state: 'RELEASED', date: new Date(start_ts + 2) },
           { state: 'PRESSED', date: new Date(start_ts) },
         ]);
+        expect(recorder.getButtonSequence()).toEqual(['SHORT_OPEN', 'TAP']);
       });
     });
     describe('with a "long release"', () => {
@@ -82,7 +87,7 @@ describe('SingleButtonRecorder', () => {
         jest.advanceTimersByTime(LONG_THRESHOLD);
       });
       it('should return an array with one entry', () => {
-        expect(recorder.getLog()).toEqual([
+        expect(recorder.getRawLog()).toEqual([
           {
             date: new Date(start_ts + LONG_THRESHOLD + 5),
             state: 'RELEASED',
@@ -100,6 +105,7 @@ describe('SingleButtonRecorder', () => {
             state: 'PRESSED',
           },
         ]);
+        expect(recorder.getButtonSequence()).toEqual(['OPEN', 'TAP', 'OPEN', 'TAP']);
       });
     });
   });
