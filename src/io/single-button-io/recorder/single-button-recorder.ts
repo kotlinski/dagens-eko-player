@@ -1,4 +1,7 @@
 import { ButtonLog, SingleButtonState } from '../button-interfaces';
+import { LONG_THRESHOLD } from '../interpreter/button-sequence-interpreter';
+
+export type ButtonEvent = 'TAP' | 'CLOSED' | 'SHORT_OPEN' | 'OPEN';
 
 export default class SingleButtonRecorder {
   button_log: ButtonLog[] = [];
@@ -36,7 +39,28 @@ export default class SingleButtonRecorder {
    * The list has the most recent event first of the array.
    *
    */
-  public getLog(): ButtonLog[] {
+  public getRawLog(): ButtonLog[] {
     return [...this.button_log];
+  }
+
+  public getButtonSequence(): ButtonEvent[] {
+    return this.getRawLog().reduce<ButtonEvent[]>(
+      (button_events: ButtonEvent[], current: ButtonLog, index: number, commands: ButtonLog[]) => {
+        const duration_ms = (index === 0 ? new Date().getTime() : commands[index - 1].date.getTime()) - current.date.getTime();
+        const type = this.parseEventType(current.state, duration_ms);
+        button_events.push(type);
+        return button_events;
+      },
+      [],
+    );
+  }
+
+  private parseEventType(state: SingleButtonState, duration_ms: number): ButtonEvent {
+    switch (state) {
+      case 'PRESSED':
+        return duration_ms >= LONG_THRESHOLD ? 'CLOSED' : 'TAP';
+      case 'RELEASED':
+        return duration_ms >= LONG_THRESHOLD ? 'OPEN' : 'SHORT_OPEN';
+    }
   }
 }

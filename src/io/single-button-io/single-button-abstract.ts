@@ -4,7 +4,7 @@
  *
  */
 import SingleButtonRecorder from './recorder/single-button-recorder';
-import SingleButtonSequenceInterpreter, { LONG_THRESHOLD } from './interpreter/button-interpreter';
+import SingleButtonSequenceInterpreter, { LONG_THRESHOLD } from './interpreter/button-sequence-interpreter';
 import { SingleButtonState } from './button-interfaces';
 import CommandEmitter from '../../radio/command-emitter';
 import { Command } from '../../radio/command';
@@ -32,7 +32,7 @@ export default abstract class SingleButtonAbstract implements CommandEmitter {
   private delayedHandler() {
     // before taking any action on the button sequence, we need to wait a bit
     setTimeout(() => {
-      const command = this.interpreter.parseButtonLog(this.button_recorder.getLog());
+      const command = this.interpreter.parseButtonSequence(this.button_recorder.getButtonSequence());
       if (!command) {
         return;
       }
