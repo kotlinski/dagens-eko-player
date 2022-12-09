@@ -18,14 +18,9 @@ So suggestion is to connect the button to pin 5 and 6.
 
 ![Board pins](./img/board-pins.png)
 
-### Script start up
+### script start up
 
-I suggest to start the script on system start up. Preferrably with a `cronjob`.
-To add/update a trigger run:
-
-> cronjob -e
-
-A suggestion of what the script looks like can be found in the scripts folder.
+I suggest to start the script on system start up. Preferrably with a `cronjob`. Read more about the scripts in the [scripts readme](./scripts/README.md).
 
 ## development
 
