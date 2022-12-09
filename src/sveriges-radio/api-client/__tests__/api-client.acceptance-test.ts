@@ -6,6 +6,7 @@ describe('SverigesRadioApiClient', () => {
     api_client = new ApiClient();
   });
   describe('fetchLatestEpisode', () => {
+    jest.setTimeout(10_000);
     it('should fetch an object containing an episode url', async () => {
       const response = await api_client.fetchEpisodes(5380, 2);
       expect(response.episodes.length).toEqual(2);
