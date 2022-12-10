@@ -14,20 +14,8 @@ function setUpIO(): (Keyboard | PiButton)[] {
   const button_recorder: SingleButtonRecorder = new SingleButtonRecorder();
 
   const io: (Keyboard | PiButton)[] = [];
-  try {
-    io.push(new Keyboard(single_button_sequence_interpreter, button_recorder));
-  } catch (error) {
-    console.log((error as Error).message);
-  }
-  try {
-    io.push(new PiButton(single_button_sequence_interpreter, button_recorder));
-  } catch (error) {
-    console.log((error as Error).message);
-  }
-
-  if (io.length < 1) {
-    throw new Error('No input, you need to connect a keyboard or a button and then restart the Radio');
-  }
+  io.push(new Keyboard(single_button_sequence_interpreter, button_recorder));
+  io.push(new PiButton(single_button_sequence_interpreter, button_recorder));
   return io;
 }
 
