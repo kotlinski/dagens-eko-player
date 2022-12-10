@@ -7,18 +7,20 @@ import PiButton from './io/pi-button';
 import RadioUrlProvider from './sveriges-radio/radio-url-provider';
 import EpisodesProvider from './sveriges-radio/episodes-provider/episodes-provider';
 import PatternFinder from './io/single-button-io/interpreter/pattern-finder';
+import SingleButtonRecorder from './io/single-button-io/recorder/single-button-recorder';
 
 function setUpIO(): (Keyboard | PiButton)[] {
   const single_button_sequence_interpreter = new SingleButtonSequenceInterpreter(new PatternFinder());
+  const button_recorder: SingleButtonRecorder = new SingleButtonRecorder();
 
   const io: (Keyboard | PiButton)[] = [];
   try {
-    io.push(new Keyboard(single_button_sequence_interpreter));
+    io.push(new Keyboard(single_button_sequence_interpreter, button_recorder));
   } catch (error) {
     console.log((error as Error).message);
   }
   try {
-    io.push(new PiButton(single_button_sequence_interpreter));
+    io.push(new PiButton(single_button_sequence_interpreter, button_recorder));
   } catch (error) {
     console.log((error as Error).message);
   }

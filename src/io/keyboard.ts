@@ -3,11 +3,12 @@ import SingleButtonAbstract from './single-button-io/single-button-abstract';
 import readline, { Interface } from 'readline';
 import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-sequence-interpreter';
 import CommandEmitter from '../radio/command-emitter';
+import SingleButtonRecorder from './single-button-io/recorder/single-button-recorder';
 
 export default class Keyboard extends SingleButtonAbstract implements CommandEmitter {
   private readonly readline: Interface;
-  constructor(readonly interpreter: SingleButtonSequenceInterpreter) {
-    super(interpreter);
+  constructor(readonly interpreter: SingleButtonSequenceInterpreter, readonly button_recorder: SingleButtonRecorder) {
+    super(interpreter, button_recorder);
     this.readline = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
@@ -15,8 +16,7 @@ export default class Keyboard extends SingleButtonAbstract implements CommandEmi
     });
     this.readline.on('line', (event: string) => this.listener(event));
   }
-  private listener(key_data: string): void {
-    const input = key_data.toString();
+  private listener(input: string): void {
     if (this.command_listener === undefined) {
       console.log('Got input, but no one cares.');
       return;
