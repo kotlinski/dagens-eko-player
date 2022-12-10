@@ -15,6 +15,9 @@ export default class PiButton extends SingleButtonAbstract {
     this.button = new Gpio(3, 'in', 'both', { debounceTimeout: 25 });
     this.button.watch(this.handleButtonInteraction());
   }
+  public kill() {
+    this.button.unwatchAll();
+  }
 
   private handleButtonInteraction(): ValueCallback {
     return (err, value) => {

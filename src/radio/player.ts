@@ -15,6 +15,9 @@ export default class Player {
       command_emitter.registerListener(this.commandHandler());
     });
   }
+  kill() {
+    this.vlc_process_supervisor.killProcess();
+  }
 
   private commandHandler(): (command: Command) => Promise<void> {
     return async (command: Command) => {
