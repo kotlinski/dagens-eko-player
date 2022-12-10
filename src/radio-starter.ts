@@ -24,6 +24,7 @@ function setUpIO(): (Keyboard | PiButton)[] {
   } catch (error) {
     console.log((error as Error).message);
   }
+
   if (io.length < 1) {
     throw new Error('No input, you need to connect a keyboard or a button and then restart the Radio');
   }
