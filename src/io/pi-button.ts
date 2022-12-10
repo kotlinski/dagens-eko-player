@@ -1,18 +1,20 @@
-import { Gpio, ValueCallback } from 'onoff';
+import { ValueCallback } from 'onoff';
 import SingleButtonAbstract from './single-button-io/single-button-abstract';
 
 import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-sequence-interpreter';
 import SingleButtonRecorder from './single-button-io/recorder/single-button-recorder';
+import GpioWrapper from './gpio-wrapper';
 
-enum BinaryButtonValue {
+export enum BinaryButtonValue {
   PRESSED,
   RELEASED,
 }
+
 export default class PiButton extends SingleButtonAbstract {
-  private readonly button: Gpio;
+  public readonly button: GpioWrapper;
   constructor(interpreter: SingleButtonSequenceInterpreter, button_recorder: SingleButtonRecorder) {
     super(interpreter, button_recorder);
-    this.button = new Gpio(3, 'in', 'both', { debounceTimeout: 25 });
+    this.button = new GpioWrapper();
     this.button.watch(this.handleButtonInteraction());
   }
   public kill() {
@@ -23,7 +25,7 @@ export default class PiButton extends SingleButtonAbstract {
     return (err, value) => {
       if (err) {
         console.error(err);
-        throw err;
+        return;
       }
       if (value === BinaryButtonValue.PRESSED) {
         this.singleButtonInteraction('PRESSED');
