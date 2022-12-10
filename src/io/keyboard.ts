@@ -16,6 +16,10 @@ export default class Keyboard extends SingleButtonAbstract implements CommandEmi
     });
     this.readline.on('line', (event: string) => this.listener(event));
   }
+  public kill() {
+    this.readline.close();
+    this.readline.removeAllListeners();
+  }
   private listener(input: string): void {
     if (this.command_listener === undefined) {
       console.log('Got input, but no one cares.');
