@@ -15,6 +15,7 @@ describe('RadioEpisodesProvider', () => {
   });
   describe('fetchLatestEpisode', () => {
     describe('acceptance test', () => {
+      jest.setTimeout(10_000);
       beforeEach(() => {
         provider = new RadioUrlProvider(episodes_provider);
       });

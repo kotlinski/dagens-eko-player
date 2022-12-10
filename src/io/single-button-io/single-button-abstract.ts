@@ -10,12 +10,12 @@ import CommandEmitter from '../../radio/command-emitter';
 import { Command } from '../../radio/command';
 
 export default abstract class SingleButtonAbstract implements CommandEmitter {
-  protected readonly button_recorder: SingleButtonRecorder;
   protected command_listener: ((command: Command) => void) | undefined;
 
-  protected constructor(readonly interpreter: SingleButtonSequenceInterpreter) {
-    this.button_recorder = new SingleButtonRecorder();
-  }
+  protected constructor(
+    readonly interpreter: SingleButtonSequenceInterpreter,
+    readonly button_recorder: SingleButtonRecorder,
+  ) {}
   registerListener(command_listener: (command: Command) => void): void {
     this.command_listener = command_listener;
   }
