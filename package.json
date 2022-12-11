@@ -18,7 +18,7 @@
     "format": "prettier --loglevel=silent --write .",
     "format-check": "prettier --check .",
     "test": "jest  --coverage",
-    "add-cover-badges": "jest-coverage-badges && git add coverage/badge-functions.svg coverage/badge-lines.svg",
+    "add-cover-badges": "jest-coverage-badges && git add coverage/badge-functions.svg coverage/badge-lines.svg coverage/coverage-summary.json",
     "vlc-help": "ts-node src/scripts/vlc-command-line-docs.ts",
     "unit-test": "jest -c  jest.config.unit-test.ts --coverage --silent &&  jest-coverage-badges"
   },
