@@ -1,12 +1,14 @@
-import { spawn } from 'child_process';
+import { ChildProcess, spawn } from 'child_process';
 import VlcProcess from './vlc-process';
 
 export default class VlcProcessSupervisor {
   private vlc_process: VlcProcess | undefined = undefined;
+  private child: ChildProcess | undefined;
 
   public accessProcess(): VlcProcess {
     if (!this.vlc_process) {
-      this.vlc_process = new VlcProcess(spawn('vlc', ['--no-random', '--no-playlist-autostart']));
+      this.child = spawn('vlc', ['--no-random', '--no-playlist-autostart']);
+      this.vlc_process = new VlcProcess(this.child);
     }
     return this.vlc_process;
   }
@@ -14,6 +16,7 @@ export default class VlcProcessSupervisor {
   public killProcess() {
     try {
       this.vlc_process?.command('shutdown');
+      this.child?.kill();
       this.vlc_process = undefined;
     } catch (e) {
       console.error(e);

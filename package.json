@@ -57,6 +57,7 @@
     "jest": "^28.1.3",
     "jest-coverage-badges": "^1.1.2",
     "jest-when": "^3.5.2",
+    "mock-spawn": "^0.2.6",
     "mock-stdin": "^1.0.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.8.0",

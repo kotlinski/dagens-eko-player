@@ -72,9 +72,9 @@ type VlcCommand = 'play' | 'pause' | 'next' | 'shutdown';
 export default class VlcProcess extends ChildProcess {
   number_broadcast_listeners: ((number: number) => void)[] = [];
 
-  constructor(p: ChildProcess) {
+  constructor(child: ChildProcess) {
     super();
-    Object.assign(this, p);
+    Object.assign(this, child);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     this.stdout!.pipe(process.stdout);
     this.stdout!.on('data', (data: Buffer) => {
@@ -89,7 +89,6 @@ export default class VlcProcess extends ChildProcess {
       console.log(`code: ${code}`);
     });
   }
-
   public printAvailableCommands() {
     this.stdin!.write(`help\n`);
   }
