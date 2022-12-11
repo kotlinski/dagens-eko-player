@@ -2,8 +2,9 @@
 
 A daily news radio player. Using a raspberry pi as hardware and the Swedish Radio as news source.
 
-[![CodeQL](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml/badge.svg)](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml) [![CodeQL](https://raw.githubusercontent.com/kotlinski/dagens-eko-player/main/coverage/badge-functions.svg)](https://github.com/kotlinski/dagens-eko-player/)
-[![CodeQL](https://raw.githubusercontent.com/kotlinski/dagens-eko-player/main/coverage/badge-lines.svg)](https://github.com/kotlinski/dagens-eko-player/)
+[![CodeQL](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml/badge.svg)](https://github.com/kotlinski/dagens-eko-player/actions/workflows/codeql.yml)
+[![functions](https://raw.githubusercontent.com/kotlinski/dagens-eko-player/main/coverage/badge-functions.svg)](https://github.com/kotlinski/dagens-eko-player/main/coverage/coverage-summary.json)
+[![lines](https://raw.githubusercontent.com/kotlinski/dagens-eko-player/main/coverage/badge-lines.svg)](https://github.com/kotlinski/dagens-eko-player/main/coverage/coverage-summary.json)
 
 ## prerequisites
 
