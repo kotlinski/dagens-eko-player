@@ -10,23 +10,19 @@ import CommandEmitter from '../../radio/command-emitter';
 import { Command } from '../../radio/command';
 
 export default abstract class SingleButtonAbstract implements CommandEmitter {
-  protected command_listener: ((command: Command) => void) | undefined;
+  protected command_listeners: ((command: Command) => void)[] = [];
 
   protected constructor(
     readonly interpreter: SingleButtonSequenceInterpreter,
     readonly button_recorder: SingleButtonRecorder,
   ) {}
   registerListener(command_listener: (command: Command) => void): void {
-    this.command_listener = command_listener;
+    this.command_listeners.push(command_listener);
   }
 
   protected singleButtonInteraction(state: SingleButtonState) {
-    try {
-      this.button_recorder.logButtonInteraction(state);
-      this.delayedHandler();
-    } catch (e) {
-      console.error((e as Error).message);
-    }
+    this.button_recorder.logButtonInteraction(state);
+    this.delayedHandler();
   }
 
   private delayedHandler() {
@@ -36,11 +32,7 @@ export default abstract class SingleButtonAbstract implements CommandEmitter {
       if (!command) {
         return;
       }
-      if (this.command_listener) {
-        void this.command_listener(command);
-      } else {
-        console.error(`Missing Command Listener, no one will receive the ${command} command.`);
-      }
+      this.command_listeners.forEach((listener) => listener(command));
     }, LONG_THRESHOLD);
   }
 }

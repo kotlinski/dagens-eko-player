@@ -21,27 +21,27 @@ export default class Keyboard extends SingleButtonAbstract implements CommandEmi
     this.readline.removeAllListeners();
   }
   private listener(input: string): void {
-    if (this.command_listener === undefined) {
+    if (this.command_listeners === undefined) {
       console.log('Got input, but no one cares.');
       return;
     }
     if (input === '1') {
-      void this.command_listener('START');
+      void this.command_listeners.forEach((listener) => listener('START'));
     }
     if (input === '2') {
-      void this.command_listener('TOGGLE_PAUSE');
+      void this.command_listeners.forEach((listener) => listener('TOGGLE_PAUSE'));
     }
     if (input === '3') {
-      void this.command_listener('NEXT');
+      void this.command_listeners.forEach((listener) => listener('NEXT'));
     }
     if (input === '4') {
-      void this.command_listener('SKIP_15_S');
+      void this.command_listeners.forEach((listener) => listener('SKIP_15_S'));
     }
     if (input === '5') {
-      void this.command_listener('REWIND_15_S');
+      void this.command_listeners.forEach((listener) => listener('REWIND_15_S'));
     }
     if (input === '6') {
-      void this.command_listener('STOP');
+      void this.command_listeners.forEach((listener) => listener('STOP'));
     }
     if (input === 'w') {
       this.singleButtonInteraction('RELEASED');

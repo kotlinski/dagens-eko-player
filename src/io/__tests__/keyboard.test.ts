@@ -19,7 +19,7 @@ describe('keyboard', () => {
   });
   describe('without registered command-listeners', () => {
     it('should fail, but not throw', () => {
-      mock_std_in.send('1\n');
+      expect(() => mock_std_in.send('1\n')).not.toThrow();
     });
   });
   describe('with command-listeners', () => {
