@@ -25,7 +25,7 @@ export default class Player {
       console.log(command);
       switch (command) {
         case 'START':
-          await vlc_process.addEpisodesToPlaylist(await this.program_provider.fetchLatestEpisodeUrls(this.program_ids));
+          vlc_process.addEpisodesToPlaylist(await this.program_provider.fetchLatestEpisodeUrls(this.program_ids));
           vlc_process.command('play');
           break;
         case 'STOP':

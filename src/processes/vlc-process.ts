@@ -94,7 +94,7 @@ export default class VlcProcess extends ChildProcess {
     this.stdin!.write(`help\n`);
   }
 
-  public async addEpisodesToPlaylist(urls: string[]): Promise<void> {
+  public addEpisodesToPlaylist(urls: string[]): void {
     for (const url of urls) {
       // Not sure if this is needed, but this is my best way of getting the episodes in the correct order
       this.stdin!.write(`enqueue ${url}\n`);
