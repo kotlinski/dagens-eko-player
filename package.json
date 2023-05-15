@@ -51,7 +51,7 @@
     "@springworks/prettier-config": "^3005.77.0",
     "@types/jest": "^28.1.7",
     "@types/jest-when": "^3.5.2",
-    "@types/node": "^20.1.0",
+    "@types/node": "^20.1.4",
     "@types/node-fetch": "^2.6.2",
     "eslint": "^8.40.0",
     "jest": "^28.1.3",
