@@ -7,7 +7,7 @@ export default class VlcProcessSupervisor {
 
   public accessProcess(): VlcProcess {
     if (!this.vlc_process) {
-      this.child = spawn('vlc', ['--no-random', '--no-playlist-autostart']);
+      this.child = spawn('vlc', ['-I', 'rc', '--no-random', '--no-playlist-autostart']);
       this.vlc_process = new VlcProcess(this.child);
     }
     return this.vlc_process;
