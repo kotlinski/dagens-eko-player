@@ -1,13 +1,13 @@
-import Player from './radio/player';
-import ApiClient from './sveriges-radio/api-client/api-client';
-import VlcProcessSupervisor from './processes/vlc-process-supervisor';
 import Keyboard from './io/keyboard';
-import SingleButtonSequenceInterpreter from './io/single-button-io/interpreter/button-sequence-interpreter';
 import PiButton from './io/pi-button';
-import RadioUrlProvider from './sveriges-radio/radio-url-provider';
-import EpisodesProvider from './sveriges-radio/episodes-provider/episodes-provider';
+import SingleButtonSequenceInterpreter from './io/single-button-io/interpreter/button-sequence-interpreter';
 import PatternFinder from './io/single-button-io/interpreter/pattern-finder';
 import SingleButtonRecorder from './io/single-button-io/recorder/single-button-recorder';
+import VlcProcessSupervisor from './processes/vlc-process-supervisor';
+import Player from './radio/player';
+import ApiClient from './sveriges-radio/api-client/api-client';
+import EpisodesProvider from './sveriges-radio/episodes-provider/episodes-provider';
+import RadioUrlProvider from './sveriges-radio/radio-url-provider';
 
 function setUpIO(): (Keyboard | PiButton)[] {
   const single_button_sequence_interpreter = new SingleButtonSequenceInterpreter(new PatternFinder());
@@ -20,6 +20,7 @@ function setUpIO(): (Keyboard | PiButton)[] {
 }
 
 let input_output: (Keyboard | PiButton)[] = [];
+
 export function bootRadio() {
   const program_provider = new RadioUrlProvider(new EpisodesProvider(new ApiClient()));
   const processor_provider = new VlcProcessSupervisor();
