@@ -1,10 +1,10 @@
-import ButtonSequenceInterpreter from '../single-button-io/interpreter/button-sequence-interpreter';
-import { Command } from '../../radio/command';
-import SingleButtonRecorder from '../single-button-io/recorder/single-button-recorder';
-import PiButton, { BinaryButtonValue } from '../pi-button';
-
-import GpioWrapper from '../gpio-wrapper';
 import { ValueCallback } from 'onoff';
+import { Command } from '../../radio/command';
+import GpioWrapper from '../gpio-wrapper';
+import PiButton, { BinaryButtonValue } from '../pi-button';
+import ButtonSequenceInterpreter from '../single-button-io/interpreter/button-sequence-interpreter';
+import SingleButtonRecorder from '../single-button-io/recorder/single-button-recorder';
+
 jest.mock('../gpio-wrapper');
 
 describe('pi-button', () => {
@@ -22,9 +22,13 @@ describe('pi-button', () => {
     const interpreter = ButtonSequenceInterpreter.prototype;
     const button_recorder: SingleButtonRecorder = new SingleButtonRecorder();
     button_recorder_spy = jest.spyOn(button_recorder, 'logButtonInteraction');
+    jest.spyOn(interpreter, 'parseButtonSequence').mockReturnValue(undefined);
 
     pi_button = new PiButton(interpreter, button_recorder);
     pi_button.registerListener(test_command_listener);
+  });
+  afterEach(() => {
+    button_recorder_spy.mockReset();
   });
 
   describe('button pressed', function () {

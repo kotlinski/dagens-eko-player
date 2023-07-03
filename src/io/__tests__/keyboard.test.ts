@@ -1,22 +1,31 @@
+import { Command } from '../../radio/command';
 import Keyboard from '../keyboard';
 import ButtonSequenceInterpreter from '../single-button-io/interpreter/button-sequence-interpreter';
-import { Command } from '../../radio/command';
 import SingleButtonRecorder from '../single-button-io/recorder/single-button-recorder';
 
 const mock_std_in = require('mock-stdin').stdin();
 
 describe('keyboard', () => {
-  const test_command_listener = jest.fn((command: Command) => console.log(`command: ${JSON.stringify(command, null, 2)}`));
+  let test_command_listener: jest.Mock<any>;
   let button_recorder_spy: jest.SpiedFunction<SingleButtonRecorder['logButtonInteraction']>;
+  let parse_button_sequence_spy: jest.SpiedFunction<ButtonSequenceInterpreter['parseButtonSequence']>;
   let keyboard: Keyboard;
+  let interpreter: ButtonSequenceInterpreter;
+  let button_recorder: SingleButtonRecorder;
 
   beforeAll(() => {
     jest.useFakeTimers();
-    const interpreter = ButtonSequenceInterpreter.prototype;
-    const button_recorder: SingleButtonRecorder = new SingleButtonRecorder();
+    interpreter = ButtonSequenceInterpreter.prototype;
+  });
+  beforeEach(() => {
+    button_recorder = new SingleButtonRecorder();
     button_recorder_spy = jest.spyOn(button_recorder, 'logButtonInteraction');
-
+    parse_button_sequence_spy = jest.spyOn(interpreter, 'parseButtonSequence').mockReturnValue(undefined);
+    test_command_listener = jest.fn((command: Command) => console.log(`command: ${JSON.stringify(command, null, 2)}`));
     keyboard = new Keyboard(interpreter, button_recorder);
+  });
+  afterEach(() => {
+    parse_button_sequence_spy.mockReset();
   });
   describe('without registered command-listeners', () => {
     it('should fail, but not throw', () => {
@@ -24,7 +33,7 @@ describe('keyboard', () => {
     });
   });
   describe('with command-listeners', () => {
-    beforeAll(() => {
+    beforeEach(() => {
       keyboard.registerListener(test_command_listener);
     });
     const test_cases: string[][] = [
@@ -39,6 +48,7 @@ describe('keyboard', () => {
       test.each(test_cases)('std input %s should render in %s', (input: string, command: string) => {
         mock_std_in.send(input);
         expect(test_command_listener).toHaveBeenCalledWith(command);
+        expect(parse_button_sequence_spy).not.toHaveBeenCalled();
       });
     });
 
@@ -48,6 +58,7 @@ describe('keyboard', () => {
           mock_std_in.send('s\n');
           jest.advanceTimersByTime(10_000);
           expect(button_recorder_spy).toHaveBeenCalledWith('PRESSED');
+          expect(parse_button_sequence_spy).toHaveBeenCalledWith(['CLOSED']);
         });
       });
       describe('letter input', () => {
@@ -55,6 +66,7 @@ describe('keyboard', () => {
           mock_std_in.send('w\n');
           jest.advanceTimersByTime(10_000);
           expect(button_recorder_spy).toHaveBeenCalledWith('RELEASED');
+          expect(parse_button_sequence_spy).toHaveBeenCalledWith(['OPEN']);
         });
       });
     });
@@ -63,6 +75,7 @@ describe('keyboard', () => {
         mock_std_in.send('random-input\n');
         expect(button_recorder_spy).not.toHaveBeenCalled();
         expect(test_command_listener).not.toHaveBeenCalled();
+        expect(parse_button_sequence_spy).not.toHaveBeenCalled();
       });
     });
   });
