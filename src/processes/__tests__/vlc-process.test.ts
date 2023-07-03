@@ -1,5 +1,5 @@
-import VlcProcess from '../vlc-process';
 import { ChildProcess } from 'child_process';
+import VlcProcess from '../vlc-process';
 
 const mock_std_in = require('mock-stdin').stdin();
 
@@ -11,6 +11,8 @@ describe('vlc-process', () => {
     child_process.stdin = mock_std_in;
     child_process.stdout = mock_std_in;
     vlc_process = new VlcProcess(child_process);
+  });
+  beforeEach(() => {
     vlc_process.stdin!.write = jest.fn();
   });
   describe('printAvailableCommands', () => {

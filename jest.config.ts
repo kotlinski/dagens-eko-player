@@ -3,7 +3,6 @@ export default {
   testRegex: '.*\\/__tests__\\/.*\\.(acceptance-)?test\\.ts$',
   modulePathIgnorePatterns: ['/scripts/', 'main.ts'],
   testEnvironment: 'node',
-  resetMocks: true,
   globals: {
     'ts-jest': {
       isolatedModules: true,
