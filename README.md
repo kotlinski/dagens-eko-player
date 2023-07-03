@@ -25,12 +25,25 @@ I suggest to start the script on system start up. Preferably with a `cronjob`. R
 
 ## development
 
+### installation
+
 First of all you need to figure out what `ip` address the raspberry pi connects to. The easiest way is probably to plug it in to a display and a keyboard and connect to your preferred network.
 
 After that you can run `ifconfig` to figure out it's current ip. This ip may change over time, so make sure to configure your
 home network/router to give your raspberry pi's `mac address` a static ip.
 
 > ifconfig
+
+#### find the ip, from computer
+
+If the raspberry pi is already connected to the wifi, but you forgot the ip. I recommend using the tool nmap to find the ip.
+
+1. Install the tool
+   > brew install nmap
+2. Scan for the ip
+   > nmap -sn 192.168.1.0/24
+
+#### deploy changes
 
 To deploy the code to the raspberry i prefer SFTP and using Filezilla as a client.
 And to start the application you have to ssh into it.
