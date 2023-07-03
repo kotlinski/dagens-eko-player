@@ -1,8 +1,8 @@
-import { EpisodesApiResponse } from '../api-client/api-interfaces';
-import ApiClient from '../api-client/api-client';
-import { publishDateSortPredicate } from '../array-operations/sort';
-import { formatApiEpisode } from '../array-operations/map';
 import { Episode } from './episode-interface';
+import ApiClient from '../api-client/api-client';
+import { EpisodesApiResponse } from '../api-client/api-interfaces';
+import { formatApiEpisode } from '../array-operations/map';
+import { publishDateSortPredicate } from '../array-operations/sort';
 
 export default class EpisodesProvider {
   constructor(private readonly api_client: ApiClient) {}
@@ -16,6 +16,7 @@ export default class EpisodesProvider {
     const response = await this.api_client.fetchEpisodes(program_id, number_of_episodes);
     return this.transformApiResponse(response).sort(publishDateSortPredicate);
   }
+
   private transformApiResponse(api_response: EpisodesApiResponse): Episode[] {
     return api_response.episodes.map(formatApiEpisode);
   }

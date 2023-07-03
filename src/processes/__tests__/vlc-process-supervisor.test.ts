@@ -1,5 +1,6 @@
-import VlcProcessSupervisor from '../vlc-process-supervisor';
 import VlcProcess from '../vlc-process';
+import VlcProcessSupervisor from '../vlc-process-supervisor';
+
 jest.mock('../vlc-process');
 const mock_spawn = require('mock-spawn');
 const my_spawn = mock_spawn();

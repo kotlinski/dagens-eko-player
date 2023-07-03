@@ -1,13 +1,14 @@
-import EpisodesProvider from '../episodes-provider';
+import { when } from 'jest-when';
 import mock_response_178 from '../../__tests__/api-response/178.json';
-import mock_response_406 from '../../__tests__/api-response/406.json';
-import mock_response_478 from '../../__tests__/api-response/478.json';
 import mock_response_2895 from '../../__tests__/api-response/2895.json';
+import mock_response_406 from '../../__tests__/api-response/406.json';
 import mock_response_4540 from '../../__tests__/api-response/4540.json';
+import mock_response_478 from '../../__tests__/api-response/478.json';
 import mock_response_5380 from '../../__tests__/api-response/5380.json';
 import ApiClient from '../../api-client/api-client';
+import EpisodesProvider from '../episodes-provider';
 import spyOn = jest.spyOn;
-import { when } from 'jest-when';
+
 describe('ApiResponseTransformer', () => {
   let episodes_provider: EpisodesProvider;
   let api_mock: jest.SpiedFunction<ApiClient['fetchEpisodes']>;

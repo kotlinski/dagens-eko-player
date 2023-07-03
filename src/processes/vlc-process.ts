@@ -89,6 +89,7 @@ export default class VlcProcess extends ChildProcess {
       console.log(`code: ${code}`);
     });
   }
+
   public printAvailableCommands() {
     this.stdin!.write(`help\n`);
   }

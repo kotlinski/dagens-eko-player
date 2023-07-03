@@ -1,8 +1,8 @@
-import ApiClient from '../api-client/api-client';
-import RadioUrlProvider from '../radio-url-provider';
 import { when } from 'jest-when';
+import ApiClient from '../api-client/api-client';
 import EpisodesProvider from '../episodes-provider/episodes-provider';
 import { getNewsProgramIds, getOtherNewsProgramIds } from '../news-program-ids';
+import RadioUrlProvider from '../radio-url-provider';
 
 describe('RadioEpisodesProvider', () => {
   let provider: RadioUrlProvider;
