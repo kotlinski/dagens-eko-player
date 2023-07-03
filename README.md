@@ -21,16 +21,29 @@ So suggestion is to connect the button to pin 5 and 6.
 
 ### script start up
 
-I suggest to start the script on system start up. Preferrably with a `cronjob`. Read more about the scripts in the [scripts readme](./scripts/README.md).
+I suggest to start the script on system start up. Preferably with a `cronjob`. Read more about the scripts in the [scripts readme](./scripts/README.md).
 
 ## development
 
-First of all you need to figure out what `ip` address the raspberry pi connects to. The easist way is probably to plug it in to a display and a keyboard and connect to your preffered network.
+### installation
 
-After that you can run `ifconfig` to figur out it's current ip. This ip may change over time, so make sure to configure your
+First of all you need to figure out what `ip` address the raspberry pi connects to. The easiest way is probably to plug it in to a display and a keyboard and connect to your preferred network.
+
+After that you can run `ifconfig` to figure out it's current ip. This ip may change over time, so make sure to configure your
 home network/router to give your raspberry pi's `mac address` a static ip.
 
 > ifconfig
+
+#### find the ip, from computer
+
+If the raspberry pi is already connected to the wifi, but you forgot the ip. I recommend using the tool nmap to find the ip.
+
+1. Install the tool
+   > brew install nmap
+2. Scan for the ip
+   > nmap -sn 192.168.1.0/24
+
+#### deploy changes
 
 To deploy the code to the raspberry i prefer SFTP and using Filezilla as a client.
 And to start the application you have to ssh into it.
@@ -60,7 +73,7 @@ _Supported keyboard buttons are:_
 
 The pi is designed to be in a box. When the box lid is opened (the button is released) the pi should start playing.
 
-The one button solution can recognice and handle the following patterns:
+The one button solution can recognize and handle the following patterns:
 
 - `released` will start playing
 - `pressed` stop playing
