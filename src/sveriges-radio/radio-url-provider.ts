@@ -1,7 +1,7 @@
-import EpisodesProvider from './episodes-provider/episodes-provider';
-import { publishDateSortPredicate } from './array-operations/sort';
 import { printEpisodeDetails, uniqueDescriptionPredicate } from './array-operations/filter';
+import { publishDateSortPredicate } from './array-operations/sort';
 import { Episode } from './episodes-provider/episode-interface';
+import EpisodesProvider from './episodes-provider/episodes-provider';
 
 export default class RadioUrlProvider {
   constructor(private readonly episodes_provider: EpisodesProvider) {}

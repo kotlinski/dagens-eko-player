@@ -2,6 +2,7 @@ import Keyboard from '../keyboard';
 import ButtonSequenceInterpreter from '../single-button-io/interpreter/button-sequence-interpreter';
 import { Command } from '../../radio/command';
 import SingleButtonRecorder from '../single-button-io/recorder/single-button-recorder';
+
 const mock_std_in = require('mock-stdin').stdin();
 
 describe('keyboard', () => {

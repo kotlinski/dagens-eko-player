@@ -23,6 +23,7 @@ export default class PatternFinder {
     STARTED_AND_OPENED: ['OPEN'],
     STARTED_AND_CLOSED: ['CLOSED'],
   };
+
   public findPattern(sequence: ButtonEvent[]): Pattern {
     for (const key in this.patterns) {
       if (this.startsWith(sequence, this.patterns[key as Pattern])) {

@@ -1,5 +1,5 @@
-import SingleButtonRecorder from '../single-button-recorder';
 import { LONG_THRESHOLD } from '../../interpreter/button-sequence-interpreter';
+import SingleButtonRecorder from '../single-button-recorder';
 
 describe('SingleButtonRecorder', () => {
   let recorder: SingleButtonRecorder;

@@ -7,6 +7,7 @@ import SingleButtonRecorder from './single-button-io/recorder/single-button-reco
 
 export default class Keyboard extends SingleButtonAbstract implements CommandEmitter {
   private readonly readline: Interface;
+
   constructor(readonly interpreter: SingleButtonSequenceInterpreter, readonly button_recorder: SingleButtonRecorder) {
     super(interpreter, button_recorder);
     this.readline = readline.createInterface({
@@ -16,10 +17,12 @@ export default class Keyboard extends SingleButtonAbstract implements CommandEmi
     });
     this.readline.on('line', (event: string) => this.listener(event));
   }
+
   public kill() {
     this.readline.close();
     this.readline.removeAllListeners();
   }
+
   private listener(input: string): void {
     if (this.command_listeners === undefined) {
       console.log('Got input, but no one cares.');

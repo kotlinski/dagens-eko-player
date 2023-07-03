@@ -9,6 +9,7 @@ import VlcProcess from '../../processes/vlc-process';
 
 class TestEmitter implements CommandEmitter {
   private command_listener: ((command: Command) => Promise<void>) | undefined;
+
   registerListener(command_function: (command: Command) => Promise<void>): void {
     this.command_listener = command_function;
   }
@@ -17,6 +18,7 @@ class TestEmitter implements CommandEmitter {
     await this.command_listener!(command);
   }
 }
+
 describe('player', () => {
   let test_emitter: TestEmitter;
   let access_process_spy: jest.SpiedFunction<VlcProcessSupervisor['accessProcess']>;

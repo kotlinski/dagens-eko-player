@@ -1,9 +1,8 @@
 import { ValueCallback } from 'onoff';
-import SingleButtonAbstract from './single-button-io/single-button-abstract';
-
+import GpioWrapper from './gpio-wrapper';
 import SingleButtonSequenceInterpreter from './single-button-io/interpreter/button-sequence-interpreter';
 import SingleButtonRecorder from './single-button-io/recorder/single-button-recorder';
-import GpioWrapper from './gpio-wrapper';
+import SingleButtonAbstract from './single-button-io/single-button-abstract';
 
 export enum BinaryButtonValue {
   PRESSED,
@@ -12,11 +11,13 @@ export enum BinaryButtonValue {
 
 export default class PiButton extends SingleButtonAbstract {
   public readonly button: GpioWrapper;
+
   constructor(interpreter: SingleButtonSequenceInterpreter, button_recorder: SingleButtonRecorder) {
     super(interpreter, button_recorder);
     this.button = new GpioWrapper();
     this.button.watch(this.handleButtonInteraction());
   }
+
   public kill() {
     this.button.unwatchAll();
   }

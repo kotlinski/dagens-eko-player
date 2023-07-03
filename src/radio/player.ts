@@ -1,11 +1,12 @@
-import VlcProcessSupervisor from '../processes/vlc-process-supervisor';
-import CommandEmitter from './command-emitter';
 import { Command } from './command';
-import RadioUrlProvider from '../sveriges-radio/radio-url-provider';
+import CommandEmitter from './command-emitter';
+import VlcProcessSupervisor from '../processes/vlc-process-supervisor';
 import { getNewsProgramIds, getOtherNewsProgramIds } from '../sveriges-radio/news-program-ids';
+import RadioUrlProvider from '../sveriges-radio/radio-url-provider';
 
 export default class Player {
   private readonly program_ids = [getNewsProgramIds(), getOtherNewsProgramIds()];
+
   constructor(
     private readonly vlc_process_supervisor: VlcProcessSupervisor,
     command_emitters: CommandEmitter[],
@@ -15,6 +16,7 @@ export default class Player {
       command_emitter.registerListener(this.commandHandler());
     });
   }
+
   kill() {
     this.vlc_process_supervisor.killProcess();
   }
