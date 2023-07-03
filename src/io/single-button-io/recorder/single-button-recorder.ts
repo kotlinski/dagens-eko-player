@@ -19,21 +19,6 @@ export default class SingleButtonRecorder {
     this.pruneOutdatedLogs();
   }
 
-  private verifyInput(previous: ButtonLog | undefined, state: 'PRESSED' | 'RELEASED') {
-    if (previous?.state === state) {
-      // Something is wrong, can't register same action twice
-      throw Error(
-        `Registered ${state} twice. ${new Date().toLocaleTimeString('sv-SE')} and ${previous.date.toLocaleTimeString('sv-SE')}`,
-      );
-    }
-  }
-
-  private pruneOutdatedLogs() {
-    if (this.button_log.length > 50) {
-      this.button_log = this.button_log.slice(0, 50);
-    }
-  }
-
   /**
    * returns a copy of the button log history.
    * The list has the most recent event first of the array.
@@ -53,6 +38,21 @@ export default class SingleButtonRecorder {
       },
       [],
     );
+  }
+
+  private verifyInput(previous: ButtonLog | undefined, state: 'PRESSED' | 'RELEASED') {
+    if (previous?.state === state) {
+      // Something is wrong, can't register same action twice
+      throw Error(
+        `Registered ${state} twice. ${new Date().toLocaleTimeString('sv-SE')} and ${previous.date.toLocaleTimeString('sv-SE')}`,
+      );
+    }
+  }
+
+  private pruneOutdatedLogs() {
+    if (this.button_log.length > 50) {
+      this.button_log = this.button_log.slice(0, 50);
+    }
   }
 
   private parseEventType(state: SingleButtonState, duration_ms: number): ButtonEvent {

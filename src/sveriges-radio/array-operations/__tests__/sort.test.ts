@@ -1,6 +1,6 @@
-import { publishDateSortPredicate } from '../sort';
 import { mockEpisode } from '../../__tests__/test-helper';
 import { Episode } from '../../episodes-provider/episode-interface';
+import { publishDateSortPredicate } from '../sort';
 
 describe('sort', () => {
   describe('publishDateSortPredicate', () => {

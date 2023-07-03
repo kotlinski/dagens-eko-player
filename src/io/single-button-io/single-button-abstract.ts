@@ -16,6 +16,7 @@ export default abstract class SingleButtonAbstract implements CommandEmitter {
     readonly interpreter: SingleButtonSequenceInterpreter,
     readonly button_recorder: SingleButtonRecorder,
   ) {}
+
   registerListener(command_listener: (command: Command) => void): void {
     this.command_listeners.push(command_listener);
   }

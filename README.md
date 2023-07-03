@@ -11,6 +11,9 @@ A daily news radio player. Using a raspberry pi as hardware and the Swedish Radi
 ### software set up
 
 This project uses vlc as a media player, so you need to be able to run vlc from command line to make this project work as expected.
+In your `.zshrc` add:
+
+`alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'`
 
 ### hardware set up
 
@@ -81,3 +84,7 @@ The one button solution can recognize and handle the following patterns:
 - `double tap` next program
 - `triple tap` fast forward 15 seconds
 - `quadruple tap` rewind 15 seconds
+
+### Others
+
+`alsamixer` is a nice tool to set the volume and audio output from the terminal.
