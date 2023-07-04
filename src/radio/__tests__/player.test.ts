@@ -1,11 +1,11 @@
-import Player from '../player';
-import VlcProcessSupervisor from '../../processes/vlc-process-supervisor';
-import RadioUrlProvider from '../../sveriges-radio/radio-url-provider';
-import EpisodesProvider from '../../sveriges-radio/episodes-provider/episodes-provider';
-import ApiClient from '../../sveriges-radio/api-client/api-client';
-import CommandEmitter from '../command-emitter';
-import { Command } from '../command';
 import VlcProcess from '../../processes/vlc-process';
+import VlcProcessSupervisor from '../../processes/vlc-process-supervisor';
+import ApiClient from '../../sveriges-radio/api-client/api-client';
+import EpisodesProvider from '../../sveriges-radio/episodes-provider/episodes-provider';
+import RadioUrlProvider from '../../sveriges-radio/radio-url-provider';
+import { Command } from '../command';
+import CommandEmitter from '../command-emitter';
+import Player from '../player';
 
 class TestEmitter implements CommandEmitter {
   private command_listener: ((command: Command) => Promise<void>) | undefined;
@@ -32,7 +32,7 @@ describe('player', () => {
   beforeEach(() => {
     const supervisor = new VlcProcessSupervisor();
     const process = VlcProcess.prototype;
-    vlc_add_episodes_spy = jest.spyOn(process, 'addEpisodesToPlaylist').mockResolvedValue();
+    vlc_add_episodes_spy = jest.spyOn(process, 'addEpisodesToPlaylist').mockReturnValue();
     vlc_command_spy = jest.spyOn(process, 'command').mockReturnValue();
     vlc_seek_in_time_spy = jest.spyOn(process, 'seekInTime').mockReturnValue();
 
