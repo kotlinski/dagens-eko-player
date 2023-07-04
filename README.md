@@ -53,9 +53,9 @@ And to start the application you have to ssh into it.
 
 > ssh pi@{the ip}
 
-Deploying changes to the pi is usually done by uploading the `src` folder, the `package.json` followed by a 
-> yarn install 
+Deploying changes to the pi is usually done by uploading the `src` folder, the `package.json` followed by a
 
+> yarn install
 
 ## how to run
 
