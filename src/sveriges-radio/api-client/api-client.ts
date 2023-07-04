@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import { EpisodesApiResponse } from './api-interfaces';
 
 export default class ApiClient {
