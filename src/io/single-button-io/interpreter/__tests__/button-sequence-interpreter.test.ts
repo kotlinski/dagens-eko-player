@@ -1,5 +1,5 @@
-import ButtonSequenceInterpreter, { LONG_THRESHOLD } from '../button-sequence-interpreter';
 import { ButtonEvent } from '../../recorder/single-button-recorder';
+import ButtonSequenceInterpreter, { LONG_THRESHOLD } from '../button-sequence-interpreter';
 import PatternFinder, { Pattern } from '../pattern-finder';
 import SpiedFunction = jest.SpiedFunction;
 

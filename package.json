@@ -17,10 +17,11 @@
     "lint-fix": "eslint --quiet --fix .",
     "format": "prettier --loglevel=silent --write .",
     "format-check": "prettier --check .",
-    "test": "jest  --coverage",
+    "test": "jest  --coverage --silent",
     "add-cover-badges": "jest-coverage-badges-ng && git add coverage/badge-functions.svg coverage/badge-lines.svg coverage/coverage-summary.json",
     "vlc-help": "ts-node src/scripts/vlc-command-line-docs.ts",
-    "unit-test": "jest -c  jest.config.unit-test.ts --coverage --silent &&  jest-coverage-badges-ng"
+    "unit-test": "jest -c  jest.config.unit-test.ts --coverage --silent &&  jest-coverage-badges-ng",
+    "sound-check": "ts-node src/scripts/sound-check.ts"
   },
   "pre-commit": [
     "lint-fix",
@@ -50,7 +51,7 @@
     "@springworks/prettier-config": "^3005.77.0",
     "@types/jest": "^29.5.2",
     "@types/jest-when": "^3.5.2",
-    "@types/node": "^20.3.1",
+    "@types/node": "^20.3.3",
     "eslint": "^8.43.0",
     "jest": "^29.5.0",
     "jest-coverage-badges-ng": "^1.0.1",
