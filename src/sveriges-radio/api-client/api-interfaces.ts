@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 export interface EpisodesApiResponse {
   copyright: string;
   episodes: EpisodeApiResponse[];
