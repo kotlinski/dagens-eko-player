@@ -1,5 +1,5 @@
-import { Command } from '../../../radio/command';
 import PatternFinder from './pattern-finder';
+import { Command } from '../../../radio/command';
 import { ButtonEvent } from '../recorder/single-button-recorder';
 
 export const LONG_THRESHOLD = 750; // milliseconds until a "tap" becomes a "long press"
