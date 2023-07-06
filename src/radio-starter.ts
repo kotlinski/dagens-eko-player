@@ -3,6 +3,7 @@ import PiButton from './io/pi-button';
 import SingleButtonSequenceInterpreter from './io/single-button-io/interpreter/button-sequence-interpreter';
 import PatternFinder from './io/single-button-io/interpreter/pattern-finder';
 import SingleButtonRecorder from './io/single-button-io/recorder/single-button-recorder';
+import { NewEpisodeNotifier } from './new-episode-notification/new-episode-notifier';
 import VlcProcessSupervisor from './processes/vlc-process-supervisor';
 import Player from './radio/player';
 import ApiClient from './sveriges-radio/api-client/api-client';
@@ -20,18 +21,26 @@ function setUpIO(): (Keyboard | PiButton)[] {
 }
 
 let input_output: (Keyboard | PiButton)[] = [];
+let new_episode_notifier: NewEpisodeNotifier;
 
 export function bootRadio() {
-  const program_provider = new RadioUrlProvider(new EpisodesProvider(new ApiClient()));
-  const processor_provider = new VlcProcessSupervisor();
+  const episodes_provider = new EpisodesProvider(new ApiClient());
+  const program_provider = new RadioUrlProvider(episodes_provider);
   input_output = setUpIO();
-  return new Player(processor_provider, input_output, program_provider);
+
+  const episode_notifier_vlc_process = new VlcProcessSupervisor();
+  new_episode_notifier = new NewEpisodeNotifier(episodes_provider, episode_notifier_vlc_process);
+  new_episode_notifier.startPolling();
+
+  const player_vlc_process = new VlcProcessSupervisor();
+  return new Player(player_vlc_process, input_output, program_provider);
 }
 
 /**
  * used for testing purposes to ensure that keyboard input is closed
  */
 export function killRadio() {
+  new_episode_notifier?.stop();
   input_output.forEach((io) => {
     io.kill();
   });
