@@ -3,11 +3,11 @@
  * Currently supporting a keyboard or a pi button
  *
  */
-import SingleButtonRecorder from './recorder/single-button-recorder';
-import SingleButtonSequenceInterpreter, { LONG_THRESHOLD } from './interpreter/button-sequence-interpreter';
 import { SingleButtonState } from './button-interfaces';
-import CommandEmitter from '../../radio/command-emitter';
+import SingleButtonSequenceInterpreter, { LONG_THRESHOLD } from './interpreter/button-sequence-interpreter';
+import SingleButtonRecorder from './recorder/single-button-recorder';
 import { Command } from '../../radio/command';
+import CommandEmitter from '../../radio/command-emitter';
 
 export default abstract class SingleButtonAbstract implements CommandEmitter {
   protected command_listeners: ((command: Command) => void)[] = [];
