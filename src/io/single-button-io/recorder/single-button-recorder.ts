@@ -14,9 +14,13 @@ export default class SingleButtonRecorder {
    */
   public logButtonInteraction(new_interaction: SingleButtonState): void {
     const prior_interaction = this.button_log.length > 0 ? this.button_log[0] : undefined;
-    this.verifyInput(prior_interaction, new_interaction);
-    this.button_log.unshift({ date: new Date(), state: new_interaction });
-    this.pruneOutdatedLogs();
+    try {
+      this.verifyInput(prior_interaction, new_interaction);
+      this.button_log.unshift({ date: new Date(), state: new_interaction });
+      this.pruneOutdatedLogs();
+    } catch (error) {
+      console.warn('Verification off input failed, will ignore and continue');
+    }
   }
 
   /**
