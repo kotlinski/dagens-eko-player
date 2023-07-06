@@ -20,7 +20,8 @@
     "test": "jest  --coverage --silent",
     "add-cover-badges": "jest-coverage-badges-ng && git add coverage/badge-functions.svg coverage/badge-lines.svg coverage/coverage-summary.json",
     "vlc-help": "ts-node src/scripts/vlc-command-line-docs.ts",
-    "unit-test": "jest -c  jest.config.unit-test.ts --coverage --silent &&  jest-coverage-badges-ng"
+    "unit-test": "jest -c  jest.config.unit-test.ts --coverage --silent &&  jest-coverage-badges-ng",
+    "sound-check": "ts-node src/scripts/sound-check.ts"
   },
   "pre-commit": [
     "lint-fix",
