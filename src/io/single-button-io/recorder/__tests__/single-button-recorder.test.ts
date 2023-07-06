@@ -22,8 +22,9 @@ describe('SingleButtonRecorder', () => {
         recorder.logButtonInteraction('RELEASED');
         jest.advanceTimersByTime(200);
       });
-      it('should ignore duplicate actions and throw', () => {
-        expect(() => recorder.logButtonInteraction('RELEASED')).toThrow();
+      it('should ignore duplicate actions', () => {
+        // even if the button recorder throws, we want the button interaction logger not to
+        expect(() => recorder.logButtonInteraction('RELEASED')).not.toThrow();
         expect(recorder.getRawLog()).toEqual([
           { state: 'RELEASED', date: new Date(start_ts + 2) },
           { state: 'PRESSED', date: new Date(start_ts) },
