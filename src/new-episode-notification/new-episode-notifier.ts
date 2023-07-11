@@ -1,6 +1,6 @@
+import { exec } from 'child_process';
 import path from 'path';
 import { clearInterval } from 'timers';
-import VlcProcessSupervisor from '../processes/vlc-process-supervisor';
 import { Episode } from '../sveriges-radio/episodes-provider/episode-interface';
 import EpisodesProvider from '../sveriges-radio/episodes-provider/episodes-provider';
 import { NewsProgramId } from '../sveriges-radio/news-program-ids';
@@ -9,14 +9,7 @@ export class NewEpisodeNotifier {
   private last_episode: Episode | undefined;
   private refresh_interval_id: NodeJS.Timer | undefined;
 
-  constructor(
-    private readonly episodes_provider: EpisodesProvider,
-    private readonly episode_notifier_vlc_process: VlcProcessSupervisor,
-  ) {
-    const file_path = path.join(__dirname, 'audio/notification.mp3');
-    console.log(file_path);
-    this.episode_notifier_vlc_process.accessProcess().addEpisodesToPlaylist([file_path]);
-  }
+  constructor(private readonly episodes_provider: EpisodesProvider) {}
 
   startPolling() {
     const ONE_MINUTE = 60 * 1_000;
@@ -32,22 +25,33 @@ export class NewEpisodeNotifier {
       this.last_episode = last_episode;
       console.log('NewEpisodeNotifier initiated');
     } else if (last_episode.publish_date.getTime() !== this.last_episode.publish_date.getTime()) {
-      await this.playSound();
+      NewEpisodeNotifier.playNotificationSound();
       this.last_episode = last_episode;
-      console.log('New episode found');
-    } else {
-      console.log('No new episodes past five minutes');
+      console.log(`---`);
+      console.log(`${new Date().toISOString()}: New episode found, ${last_episode.title}: ${last_episode.description}`);
+      console.log(`Publish date: ${last_episode.publish_date.toISOString()}`);
+      console.log(`---`);
     }
   }
 
-  public async playSound() {
-    this.episode_notifier_vlc_process.accessProcess().command('play');
+  static playNotificationSound() {
+    const file_path = path.join(__dirname, '../new-episode-notification/notification.mp3');
+    exec(`mpg123 --quiet --gain 25 ${file_path}`, (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    });
   }
 
   stop() {
     try {
       clearInterval(this.refresh_interval_id);
-      this.episode_notifier_vlc_process.killProcess();
     } catch (error) {
       console.log(error);
     }
