@@ -67,7 +67,7 @@ import { ChildProcess } from 'child_process';
 | shutdown . . . . . . . . . . . . . . . . . . . . . . .  shutdown VLC
 +----[ end of help ] */
 
-type VlcCommand = 'play' | 'pause' | 'next' | 'shutdown';
+type VlcCommand = 'play' | 'pause' | 'next' | 'shutdown' | 'playlist' | 'volume';
 
 export default class VlcProcess extends ChildProcess {
   number_broadcast_listeners: ((number: number) => void)[] = [];
@@ -97,6 +97,7 @@ export default class VlcProcess extends ChildProcess {
   public addEpisodesToPlaylist(urls: string[]): void {
     for (const url of urls) {
       // Not sure if this is needed, but this is my best way of getting the episodes in the correct order
+      console.log(`enqueue ${url}\n`);
       this.stdin!.write(`enqueue ${url}\n`);
     }
     // make sure that we start from the top of the playlist
