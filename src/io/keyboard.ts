@@ -7,7 +7,10 @@ import CommandEmitter from '../radio/command-emitter';
 export default class Keyboard extends SingleButtonAbstract implements CommandEmitter {
   private readonly readline: Interface;
 
-  constructor(readonly interpreter: SingleButtonSequenceInterpreter, readonly button_recorder: SingleButtonRecorder) {
+  constructor(
+    readonly interpreter: SingleButtonSequenceInterpreter,
+    readonly button_recorder: SingleButtonRecorder,
+  ) {
     super(interpreter, button_recorder);
     this.readline = readline.createInterface({
       input: process.stdin,
