@@ -1,6 +1,10 @@
 import { ChildProcess, spawn } from 'child_process';
 import VlcProcess from './vlc-process';
 
+/**
+ * Will hand over a vlc process.
+ * Unfortunately, VLC seem to only be able to have one process at the time on some hardwares
+ */
 export default class VlcProcessSupervisor {
   private vlc_process: VlcProcess | undefined = undefined;
   private child: ChildProcess | undefined;

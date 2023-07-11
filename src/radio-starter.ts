@@ -24,16 +24,20 @@ let input_output: (Keyboard | PiButton)[] = [];
 let new_episode_notifier: NewEpisodeNotifier;
 
 export function bootRadio() {
-  const episodes_provider = new EpisodesProvider(new ApiClient());
-  const program_provider = new RadioUrlProvider(episodes_provider);
-  input_output = setUpIO();
+  try {
+    const episodes_provider = new EpisodesProvider(new ApiClient());
+    const program_provider = new RadioUrlProvider(episodes_provider);
+    input_output = setUpIO();
 
-  const episode_notifier_vlc_process = new VlcProcessSupervisor();
-  new_episode_notifier = new NewEpisodeNotifier(episodes_provider, episode_notifier_vlc_process);
-  new_episode_notifier.startPolling();
+    new_episode_notifier = new NewEpisodeNotifier(episodes_provider);
+    new_episode_notifier.startPolling();
 
-  const player_vlc_process = new VlcProcessSupervisor();
-  return new Player(player_vlc_process, input_output, program_provider);
+    const player_vlc_process = new VlcProcessSupervisor();
+    return new Player(player_vlc_process, input_output, program_provider);
+  } catch (error: any) {
+    console.error(`Fatal error: ${(error as Error).message}`, error);
+    throw new Error('Fatal error occurred');
+  }
 }
 
 /**
