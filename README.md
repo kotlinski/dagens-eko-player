@@ -10,6 +10,13 @@ A daily news radio player. Using a raspberry pi as hardware and the Swedish Radi
 
 ### software set up
 
+For audio playback, both `vlc` and `mpg321` are used.
+
+> brew install vlc
+> brew install mpg321
+
+N.B. brew may not work on Raspberry Pi.
+
 This project uses vlc as a media player, so you need to be able to run vlc from command line to make this project work as expected.
 In your `.zshrc` add:
 
