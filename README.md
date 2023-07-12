@@ -13,6 +13,7 @@ A daily news radio player. Using a raspberry pi as hardware and the Swedish Radi
 For audio playback, both `vlc` and `mpg321` are used.
 
 > brew install vlc
+>
 > brew install mpg321
 
 N.B. brew may not work on Raspberry Pi.
