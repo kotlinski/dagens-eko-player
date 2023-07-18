@@ -14,8 +14,12 @@ export class NewEpisodeNotifier {
   startPolling() {
     const ONE_MINUTE = 60 * 1_000;
     this.refresh_interval_id = setInterval(() => {
-      void this.notifyIfNewEpisode();
-    }, ONE_MINUTE * 5);
+      try {
+        void this.notifyIfNewEpisode();
+      } catch (error) {
+        console.error('The notifier failed', error);
+      }
+    }, ONE_MINUTE * 10);
   }
 
   public async notifyIfNewEpisode() {
