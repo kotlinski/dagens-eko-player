@@ -861,10 +861,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest-when@^3.5.2":
-  version "3.5.2"
-  resolved "https://registry.npmjs.org/@types/jest-when/-/jest-when-3.5.2.tgz#7e6225e827267d26f115dc97da6403a3b37556c5"
-  integrity sha512-1WP+wJDW7h4TYAVLoIebxRIVv8GPk66Qsq2nU7PkwKZ6usurnDQZgk0DfBNKAJ9gVzapCXSV53Vn/3nBHBNzAw==
+"@types/jest-when@^3.5.4":
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/@types/jest-when/-/jest-when-3.5.4.tgz#141e091104309d4016f510a67a7715a9c99ef826"
+  integrity sha512-4oMnD6AVq1WL+RhVDKgRH5K8+S8q/8bXsLN6LBMqhK/JL54YDRNpMLBN+prjcdNuBVGCKxQ3VUWa/50JG7TWIA==
   dependencies:
     "@types/jest" "*"
 
