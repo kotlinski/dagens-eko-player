@@ -49,7 +49,7 @@
   "devDependencies": {
     "@springworks/eslint-config-typescript": "^3005.250.0",
     "@springworks/prettier-config": "^3005.77.0",
-    "@types/jest": "^29.5.7",
+    "@types/jest": "^29.5.10",
     "@types/jest-when": "^3.5.4",
     "@types/node": "^20.9.2",
     "eslint": "^8.54.0",
