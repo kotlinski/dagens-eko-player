@@ -25,7 +25,9 @@ export default class RadioUrlProvider {
    * @private
    */
   private fetchProgramEpisodes(): (program_id: number) => Promise<Episode[]> {
-    return async (program_id: number): Promise<Episode[]> =>
-      (await this.episodes_provider.fetchEpisodes(program_id, 2)).filter(uniqueDescriptionPredicate);
+    return async (program_id: number): Promise<Episode[]> => {
+      const episodes = await this.episodes_provider.fetchEpisodes(program_id, 2);
+      return episodes.filter(uniqueDescriptionPredicate);
+    };
   }
 }

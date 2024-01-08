@@ -7,7 +7,7 @@ import { NewsProgramId } from '../sveriges-radio/news-program-ids';
 
 export class NewEpisodeNotifier {
   private last_episode: Episode | undefined;
-  private refresh_interval_id: NodeJS.Timer | undefined;
+  private refresh_interval_id: NodeJS.Timeout | undefined;
 
   constructor(private readonly episodes_provider: EpisodesProvider) {}
 
@@ -19,15 +19,15 @@ export class NewEpisodeNotifier {
       } catch (error) {
         console.error('The notifier failed', error);
       }
-    }, ONE_MINUTE * 10);
+    }, ONE_MINUTE * 45);
   }
 
   public async notifyIfNewEpisode() {
-    const list_with_last_episode: Episode[] = await this.episodes_provider.fetchEpisodes(NewsProgramId.EKOT_MAIN_NEWS, 1);
-    const last_episode = list_with_last_episode[0];
+    const list_with_last_episodes = await this.episodes_provider.fetchEpisodes(NewsProgramId.EKOT_MAIN_NEWS, 1);
+    const last_episode = list_with_last_episodes[0];
     if (this.last_episode === undefined) {
       this.last_episode = last_episode;
-      console.log('NewEpisodeNotifier initiated');
+      console.log(`${new Date().toISOString()}, NewEpisodeNotifier initiated`);
     } else if (last_episode.publish_date.getTime() !== this.last_episode.publish_date.getTime()) {
       NewEpisodeNotifier.playNotificationSound();
       this.last_episode = last_episode;

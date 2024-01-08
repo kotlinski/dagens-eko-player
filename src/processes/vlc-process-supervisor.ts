@@ -18,6 +18,7 @@ export default class VlcProcessSupervisor {
   }
 
   public killProcess() {
+    console.log(`killProcess(), ${new Date().toISOString()}`);
     try {
       this.vlc_process?.command('shutdown');
       this.child?.kill();
