@@ -13,8 +13,13 @@ export default class EpisodesProvider {
    * @param number_of_episodes
    */
   async fetchEpisodes(program_id: number, number_of_episodes: number): Promise<Episode[]> {
-    const response = await this.api_client.fetchEpisodes(program_id, number_of_episodes);
-    return this.transformApiResponse(response).sort(publishDateSortPredicate);
+    try {
+      const response = await this.api_client.fetchEpisodes(program_id, number_of_episodes);
+      return this.transformApiResponse(response).sort(publishDateSortPredicate);
+    } catch (error: any) {
+      console.error(`Failed fetching episodes, reason: ${error}`);
+    }
+    return [];
   }
 
   private transformApiResponse(api_response: EpisodesApiResponse): Episode[] {
