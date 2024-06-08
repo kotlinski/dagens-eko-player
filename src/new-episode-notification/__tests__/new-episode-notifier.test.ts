@@ -60,7 +60,7 @@ describe('NewEpisodeNotifier', () => {
         expect(NewEpisodeNotifier.playNotificationSound).toHaveBeenCalledTimes(1);
       });
     });
-    describe('having not having a new episode', function () {
+    describe('not having a new episode', function () {
       beforeEach(() => {
         program_ids.flat().forEach((program_id) => {
           when(fetch_episodes_spy)
@@ -76,8 +76,31 @@ describe('NewEpisodeNotifier', () => {
             ]);
         });
       });
-
-      it('should notify only play once', async () => {
+      it('should not play sound', async () => {
+        await notifier.notifyIfNewEpisode();
+        expect(NewEpisodeNotifier.playNotificationSound).not.toHaveBeenCalled();
+        await notifier.notifyIfNewEpisode();
+        expect(NewEpisodeNotifier.playNotificationSound).not.toHaveBeenCalled();
+      });
+    });
+    describe('not being able to fetch episode info', function () {
+      beforeEach(() => {
+        program_ids.flat().forEach((program_id) => {
+          when(fetch_episodes_spy)
+            .calledWith(program_id, 1)
+            .mockResolvedValueOnce([
+              {
+                title: `title ${program_id}`,
+                url: `http://www.url/${program_id}.mp3`,
+                publish_date: new Date('2023-02-01T20:05:00'),
+                description: 'description',
+                program: { id: Number(program_id), name: 'name' },
+              },
+            ])
+            .mockResolvedValue([]);
+        });
+      });
+      it('should not play sound', async () => {
         await notifier.notifyIfNewEpisode();
         expect(NewEpisodeNotifier.playNotificationSound).not.toHaveBeenCalled();
         await notifier.notifyIfNewEpisode();
