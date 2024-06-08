@@ -25,6 +25,10 @@ export class NewEpisodeNotifier {
   public async notifyIfNewEpisode() {
     const list_with_last_episodes = await this.episodes_provider.fetchEpisodes(NewsProgramId.EKOT_MAIN_NEWS, 1);
     const last_episode = list_with_last_episodes[0];
+    if (last_episode === undefined) {
+      console.error('Invalid episode, ignore and try again later...');
+      return;
+    }
     if (this.last_episode === undefined) {
       this.last_episode = last_episode;
       console.log(`${new Date().toISOString()}, NewEpisodeNotifier initiated`);
