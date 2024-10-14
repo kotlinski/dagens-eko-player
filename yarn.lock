@@ -744,28 +744,28 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
-"@springworks/eslint-config-jest@3005.342.0":
-  version "3005.342.0"
-  resolved "https://registry.yarnpkg.com/@springworks/eslint-config-jest/-/eslint-config-jest-3005.342.0.tgz#422e04a949e3d039138c0d5ca18a62b6d9f64d11"
-  integrity sha512-nH0zICcYltJj9BZbT6oJrdPXzcWWIXMYsydePKyQDuyCEyUFrgw5bV+NX4DwRGsxbeAR5MCVpEC1eRitsHiLWQ==
+"@springworks/eslint-config-jest@3005.383.0":
+  version "3005.383.0"
+  resolved "https://registry.yarnpkg.com/@springworks/eslint-config-jest/-/eslint-config-jest-3005.383.0.tgz#87a4c4d7d3f5a88177b7049e222c870b82d26f9c"
+  integrity sha512-NvVrW32btJy7bDwYnSaV01qbuQ3mthXMxutU7yymqaPtPPFnrDPHoCVFOeZC94dOlKDcsTrFkGOMPD1+j8KSLQ==
   dependencies:
-    "@springworks/eslint-config" "3005.342.0"
+    "@springworks/eslint-config" "3005.383.0"
     eslint-plugin-jest "^28.6.0"
     eslint-plugin-no-only-tests "^3.1.0"
 
-"@springworks/eslint-config-typescript@^3005.342.0":
-  version "3005.342.0"
-  resolved "https://registry.yarnpkg.com/@springworks/eslint-config-typescript/-/eslint-config-typescript-3005.342.0.tgz#437b0a056ce56c89e1d4eed5b9bde75fcba2ba5d"
-  integrity sha512-H8suyY8cH2so2gISJbr9gF73vQ9EFB4lULYVERugFYYR2nkG7wN0etrCxfMozms82aijCOQU+lZq3rqdjIvvSA==
+"@springworks/eslint-config-typescript@^3005.383.0":
+  version "3005.383.0"
+  resolved "https://registry.yarnpkg.com/@springworks/eslint-config-typescript/-/eslint-config-typescript-3005.383.0.tgz#f792843fe43febdb6f7a6a3754aa7eaa622bc6f0"
+  integrity sha512-nU4ejC6clzir0o5QMgChi8YnDkcjHuJGUz+h0Pgr3iTYF7975/SCry70sv0UVbbeQ72RF/xTzzx+FOsyRc8AgQ==
   dependencies:
-    "@springworks/eslint-config-jest" "3005.342.0"
+    "@springworks/eslint-config-jest" "3005.383.0"
 
-"@springworks/eslint-config@3005.342.0":
-  version "3005.342.0"
-  resolved "https://registry.yarnpkg.com/@springworks/eslint-config/-/eslint-config-3005.342.0.tgz#ddf3cb4711f3711f2b8c895af454c1855b6df9e8"
-  integrity sha512-4IzTcA9hhPhUzFJxcgHtLvrTF/dN6CYaTOzz+l9W6W7D3AyTo3/1KwEu8adbLSXTw0Rn8YaNs1dI3ohvmTYI5Q==
+"@springworks/eslint-config@3005.383.0":
+  version "3005.383.0"
+  resolved "https://registry.yarnpkg.com/@springworks/eslint-config/-/eslint-config-3005.383.0.tgz#8301b273f2306193a2863d6b22aff58982deb34e"
+  integrity sha512-wtMfvEOxLR9YuBKovSh1Yf0mo+8D7fCKN1oj85EvM0tAsgoiivN6LhEz3xAKLHM2Fd1U8p57ftgQ4hRAB1pj+Q==
   dependencies:
-    "@springworks/eslint-plugin" "3005.342.0"
+    "@springworks/eslint-plugin" "3005.383.0"
     "@typescript-eslint/eslint-plugin" "^7.14.1"
     "@typescript-eslint/parser" "^7.14.1"
     eslint-config-prettier "^9.1.0"
@@ -774,10 +774,10 @@
     eslint-plugin-import "^2.29.1"
     eslint-plugin-jsdoc "^48.4.0"
 
-"@springworks/eslint-plugin@3005.342.0":
-  version "3005.342.0"
-  resolved "https://registry.yarnpkg.com/@springworks/eslint-plugin/-/eslint-plugin-3005.342.0.tgz#a4f36169e95136c72ad12f65c4cdd981bd3a3493"
-  integrity sha512-5VJlgjt6cBvwX6p3pFInshjp2CDKpM7S7PwD2+HfG/Nii8slwJLro1/9/PQZIwaxEgATns+ofoHYL84hOrxqKA==
+"@springworks/eslint-plugin@3005.383.0":
+  version "3005.383.0"
+  resolved "https://registry.yarnpkg.com/@springworks/eslint-plugin/-/eslint-plugin-3005.383.0.tgz#f7b4a2f6ca333ade4f2a99df229bf12fc70b8021"
+  integrity sha512-8NlucGjeivB2p6sixfYaTDw7gSkI3B3TVNjU4R34QCAJGHjSPjuaM2T9waXlniac6lrdk3WSjrTJa4QPklkA/A==
 
 "@springworks/prettier-config@^3005.77.0":
   version "3005.77.0"
