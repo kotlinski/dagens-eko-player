@@ -779,10 +779,10 @@
   resolved "https://registry.yarnpkg.com/@springworks/eslint-plugin/-/eslint-plugin-3005.383.0.tgz#f7b4a2f6ca333ade4f2a99df229bf12fc70b8021"
   integrity sha512-8NlucGjeivB2p6sixfYaTDw7gSkI3B3TVNjU4R34QCAJGHjSPjuaM2T9waXlniac6lrdk3WSjrTJa4QPklkA/A==
 
-"@springworks/prettier-config@^3005.77.0":
-  version "3005.77.0"
-  resolved "https://registry.npmjs.org/@springworks/prettier-config/-/prettier-config-3005.77.0.tgz#15cbc7841bd8883b73cd8a25c2c2fef52f536fc4"
-  integrity sha512-+sSLYDWDoNm3cSz6uXF3AMqfaiEKFuIL8x0xaNpMl7Rg0kYYbEkf+HJ4r3mpGwXkgCy1i1ro5Wnxyz5RoBRh7w==
+"@springworks/prettier-config@^3005.383.0":
+  version "3005.383.0"
+  resolved "https://registry.yarnpkg.com/@springworks/prettier-config/-/prettier-config-3005.383.0.tgz#3d3b98d3e0b67a3eb58b85f355453b55b2c791f1"
+  integrity sha512-futHWXu/3KEc8TF3yo6hs2V+1L64i8L1HqpvGFiVFlciGxv+QSMNJY3BT72DK3H4h1Yh+SFwK02hy/QT+OI/ww==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.9"
