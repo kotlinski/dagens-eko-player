@@ -47,7 +47,7 @@
     "onoff": "^6.0.3"
   },
   "devDependencies": {
-    "@springworks/eslint-config-typescript": "^3005.383.0",
+    "@springworks/eslint-config-typescript": "^3005.418.0",
     "@springworks/prettier-config": "^3005.383.0",
     "@types/jest": "^29.5.13",
     "@types/jest-when": "^3.5.5",
