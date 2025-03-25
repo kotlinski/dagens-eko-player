@@ -2937,10 +2937,10 @@ jest-watcher@^29.7.0:
     jest-util "^29.7.0"
     string-length "^4.0.1"
 
-jest-when@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/jest-when/-/jest-when-3.6.0.tgz#b46ee408d68f671447b218f2ae6bd93fb5028acf"
-  integrity sha512-+cZWTy0ekAJo7M9Om0Scdor1jm3wDiYJWmXE8U22UVnkH54YCXAuaqz3P+up/FdtOg8g4wHOxV7Thd7nKhT6Dg==
+jest-when@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/jest-when/-/jest-when-3.7.0.tgz#9a464964d7312214da8d12ea57957a06fbcc6244"
+  integrity sha512-aLbiyxmtksijcrKFir7n+t+XPbqSLV01eDkRyX28WM4VgA/iSc3mG8R8O2evDtOAa6SefrJiTIt/rTqqyrwVZg==
 
 jest-worker@^29.7.0:
   version "29.7.0"
