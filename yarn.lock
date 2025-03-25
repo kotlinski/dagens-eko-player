@@ -753,10 +753,10 @@
     eslint-plugin-jest "^28.6.0"
     eslint-plugin-no-only-tests "^3.1.0"
 
-"@springworks/eslint-config-typescript@^3005.383.0":
-  version "3005.383.0"
-  resolved "https://registry.yarnpkg.com/@springworks/eslint-config-typescript/-/eslint-config-typescript-3005.383.0.tgz#f792843fe43febdb6f7a6a3754aa7eaa622bc6f0"
-  integrity sha512-nU4ejC6clzir0o5QMgChi8YnDkcjHuJGUz+h0Pgr3iTYF7975/SCry70sv0UVbbeQ72RF/xTzzx+FOsyRc8AgQ==
+"@springworks/eslint-config-typescript@^3005.418.0":
+  version "3005.418.0"
+  resolved "https://registry.yarnpkg.com/@springworks/eslint-config-typescript/-/eslint-config-typescript-3005.418.0.tgz#ef6204aa518322ea591e3aa5d5b4ec90eb216356"
+  integrity sha512-0T36TS4yapXwSJNv3+4aGmBSHXNxQWaVT6M5wsMud8jjewcVdVC4X0iWF4i2ByaL2ihJLoEW9VpkGpn/UF3HAQ==
   dependencies:
     "@springworks/eslint-config-jest" "3005.383.0"
 
